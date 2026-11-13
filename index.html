@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SIDE QUEST CLUB — spin a side quest</title>
-<meta name="description" content="Scan the shirt, spin a side quest, do it together. Side Quest Club gets people out of their comfort zone and talking to each other.">
+<title>SIDE QUEST CLUB — the shirt that starts side quests</title>
+<meta name="description" content="A shirt with a QR code on the back. People scan it, get a side quest, and you do it together. Side Quest Club gets people out of their comfort zone and talking to each other.">
 <meta name="theme-color" content="#fbf8ef">
 <link rel="preload" href="fonts/bagel-fat-one.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
@@ -12,16 +12,17 @@
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="mark display" href="#spin">SIDE QUEST CLUB</a>
+    <a class="mark display" href="#home">SIDE QUEST CLUB</a>
     <div class="right">
       <button class="lang" id="lang" aria-label="Language">ES</button>
-      <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+      <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i><span class="peek" aria-hidden="true">👀</span></button>
     </div>
   </header>
 
   <nav class="menu" id="menu" hidden>
     <button class="x" id="menuClose" aria-label="Close">✕</button>
-    <a href="#spin"><span data-i18n="mSpin"></span><small data-i18n="mSpinS"></small></a>
+    <a href="#home"><span data-i18n="mHome"></span><small data-i18n="mHomeS"></small></a>
+    <a href="p/?s=demo" id="tryLink"><span data-i18n="mTry"></span><small data-i18n="mTryS"></small></a>
     <a href="#wall"><span data-i18n="mWall"></span><small data-i18n="mWallS"></small></a>
     <a href="#about"><span data-i18n="mAbout"></span><small data-i18n="mAboutS"></small></a>
     <a href="#club"><span data-i18n="mClub"></span><small data-i18n="mClubS"></small></a>
@@ -29,60 +30,47 @@
   </nav>
 
   <main>
-    <!-- ===== SPIN ===== -->
-    <section class="play" id="v-spin" hidden>
-      <div class="kicker" id="foundKicker"></div>
-      <h1 class="display" data-i18n="spinTitle"></h1>
-      <p class="sub" id="spinSub"></p>
-      <div class="machine">
-        <div class="lbl" data-i18n="yourQuest"></div>
-        <div class="window"><div class="reel q" id="reel">? ? ?</div></div>
+    <!-- ===== HOME ===== -->
+    <section id="v-home" hidden style="padding:0">
+      <div class="hero">
+        <div class="kicker" data-i18n="hKicker"></div>
+        <h1 class="display"><span>SIDE</span><span class="ink">QUEST</span><span>CLUB</span></h1>
+        <svg class="loop" viewBox="0 0 340 60" aria-hidden="true"><path d="M8 34C60 10 150 4 220 12c50 6 70 22 40 32-34 11-110 8-130-6-16-12 30-26 96-24 40 1 78 12 98 30m0 0-4-17m4 17-17-1"/></svg>
+        <p class="lede" data-i18n="hLede"></p>
+        <div class="stack">
+          <a class="btn red" href="#club" data-i18n="ctaList"></a>
+          <a class="btn" href="p/?s=demo" data-i18n="ctaTry"></a>
+        </div>
       </div>
-      <label class="devil"><input type="checkbox" id="devil"><span data-i18n="devil"></span></label>
-      <div class="stack" id="preSpin"><button class="btn red big" id="spinBtn" data-i18n="spin"></button></div>
-      <div class="stack" id="postSpin" hidden>
-        <button class="btn red" id="acceptBtn" data-i18n="accept"></button>
-        <button class="btn" id="againBtn" data-i18n="again"></button>
-      </div>
-      <div class="how">
-        <div><b>1</b><span data-i18n="how1"></span></div>
-        <div><b>2</b><span data-i18n="how2"></span></div>
-        <div><b>3</b><span data-i18n="how3"></span></div>
-      </div>
-    </section>
-
-    <!-- ===== ACCEPTED ===== -->
-    <section class="play" id="v-accept" hidden>
-      <div class="kicker" data-i18n="accKicker"></div>
-      <div class="ticket"><small>Side Quest</small><div id="accText"></div></div>
-      <p class="note" data-i18n="accNote"></p>
-      <div class="stack">
-        <button class="btn red" id="doneBtn" data-i18n="done"></button>
-        <button class="btn plain" id="changeBtn" data-i18n="change"></button>
-      </div>
-    </section>
-
-    <!-- ===== DONE + reveal ===== -->
-    <section class="play" id="v-done" hidden>
-      <div class="trophy">🏆</div>
-      <h1 class="display" data-i18n="doneTitle"></h1>
-      <p class="sub" data-i18n="doneSub"></p>
-      <div class="wlbox light" style="text-align:left;margin:22px 0">
-        <div class="twist" data-i18n="twist"></div>
-        <h2 class="display" data-i18n="pitchH"></h2>
-        <p class="sub" data-i18n="pitchP"></p>
-        <form class="wl" data-source="after-quest" novalidate>
-          <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
-          <p class="wlerr" hidden></p>
-          <button class="btn red" type="submit"></button>
-        </form>
-        <p class="demo" hidden></p>
-        <a class="more" href="#club" data-i18n="seePlan"></a>
-      </div>
-      <div class="stack">
-        <button class="btn" id="anotherBtn" data-i18n="another"></button>
-        <a class="btn plain" href="#wall" data-i18n="toWall"></a>
-      </div>
+      <section>
+        <h2 class="display" data-i18n="howH"></h2>
+        <div class="steps">
+          <div class="step"><h3 data-i18n="s1h"></h3><p data-i18n="s1p"></p></div>
+          <div class="step"><h3 data-i18n="s2h"></h3><p data-i18n="s2p"></p></div>
+          <div class="step"><h3 data-i18n="s3h"></h3><p data-i18n="s3p"></p></div>
+        </div>
+      </section>
+      <section>
+        <h2 class="display" data-i18n="questsH"></h2>
+        <p class="sub" data-i18n="questsP"></p>
+        <div class="chips" id="chips"></div>
+      </section>
+      <section class="stack">
+        <a class="btn" href="#about" data-i18n="hAbout"></a>
+        <a class="btn" href="#wall" data-i18n="hWall"></a>
+      </section>
+      <section>
+        <div class="wlbox">
+          <h2 class="display" data-i18n="listH"></h2>
+          <p class="sub" data-i18n="listP"></p>
+          <form class="wl" data-source="home" novalidate>
+            <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
+            <p class="wlerr" hidden></p>
+            <button class="btn red" type="submit"></button>
+          </form>
+          <p class="demo" hidden></p>
+        </div>
+      </section>
     </section>
 
     <!-- ===== WALL ===== -->
@@ -94,7 +82,7 @@
         <textarea id="wallText" rows="3" maxlength="280" required data-i18n-ph="wallPh"></textarea>
         <button class="btn red" type="submit" id="wallSend" data-i18n="wallSend"></button>
       </form>
-      <div class="msgs" id="msgs"></div>
+      <div class="wallbg"><div class="msgs" id="msgs"></div></div>
       <p class="smallnote" id="wallDemo" hidden data-i18n="wallDemo"></p>
     </section>
 
@@ -112,11 +100,10 @@
       <span class="sig">— Aron</span>
       <div class="stack" style="margin-top:26px">
         <a class="btn red" href="#club" data-i18n="abCta"></a>
-        <a class="btn" href="#spin" data-i18n="backSpin"></a>
       </div>
     </section>
 
-    <!-- ===== CLUB / WHAT'S COMING ===== -->
+    <!-- ===== CLUB ===== -->
     <section class="page" id="v-club" hidden>
       <div class="kicker" data-i18n="clKicker"></div>
       <h1 class="display" data-i18n="clTitle"></h1>
@@ -138,14 +125,12 @@
         <p class="demo" hidden></p>
       </div>
     </section>
-
-    <p class="shirtid" id="shirtId" style="text-align:center"></p>
   </main>
+  <footer>SIDE QUEST CLUB · Madrid</footer>
 </div>
-
+<script src="js/text.js"></script>
 <script src="js/common.js"></script>
 <script src="js/quests.js"></script>
-<script src="js/text.js"></script>
-<script src="js/app.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

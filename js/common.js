@@ -12,19 +12,21 @@ const $ = id => document.getElementById(id);
 const SHIRT = (new URLSearchParams(location.search).get('s') || '').replace(/[^\w-]/g,'').slice(0,12);
 
 /* ----- language ----- */
+const LANG_CHOSEN = !!store.get('sqc_lang');
 let LANG = store.get('sqc_lang') || ((navigator.language||'en').toLowerCase().startsWith('es') ? 'es' : 'en');
+function setLang(code){ LANG = code; store.set('sqc_lang', code); applyLang(); }
 let DICT = { en:{} };
 const t = k => (DICT[LANG] && DICT[LANG][k]) ?? (DICT.en[k] ?? k);
 function applyLang(){
   document.documentElement.lang = LANG;
   document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
-  const b = $('lang'); if (b) b.textContent = LANG === 'en' ? 'ES' : 'EN';
+  const b = $('lang'); if (b){ const i = LANGS.findIndex(l => l.code === LANG); b.textContent = LANGS[(i+1) % LANGS.length].code.toUpperCase(); }
   document.dispatchEvent(new Event('langchange'));
 }
 function initLang(dict){
   DICT = dict;
-  $('lang').addEventListener('click', () => { LANG = LANG === 'en' ? 'es' : 'en'; store.set('sqc_lang', LANG); applyLang(); });
+  $('lang').addEventListener('click', () => { const i = LANGS.findIndex(l => l.code === LANG); setLang(LANGS[(i+1) % LANGS.length].code); });
   applyLang();
 }
 

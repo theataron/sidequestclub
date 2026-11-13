@@ -1,3 +1,115 @@
-<!doctype html><meta charset="utf-8"><title>SIDE QUEST CLUB</title>
-<script>location.replace('../' + location.search + location.hash);</script>
-<a href="../">SIDE QUEST CLUB</a>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SIDE QUEST CLUB — your side quest</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fbf8ef">
+<link rel="preload" href="../fonts/bagel-fat-one.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="top" hidden>
+    <span class="mark display">SIDE QUEST CLUB</span>
+    <div class="right">
+      <button class="lang" id="lang" aria-label="Language">ES</button>
+      <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i><span class="peek" aria-hidden="true">👀</span></button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" hidden>
+    <button class="x" id="menuClose" aria-label="Close">✕</button>
+    <a href="#" id="mSpinLink"><span data-i18n="mSpin"></span><small data-i18n="mSpinS"></small></a>
+    <a data-to="wall"><span data-i18n="mWall"></span><small data-i18n="mWallS"></small></a>
+    <a data-to="about"><span data-i18n="mAbout"></span><small data-i18n="mAboutS"></small></a>
+    <a data-to="club"><span data-i18n="mClub"></span><small data-i18n="mClubS"></small></a>
+    <div class="foot">SIDE QUEST CLUB · Madrid</div>
+  </nav>
+
+  <main>
+    <!-- ===== LANGUAGE ===== -->
+    <section class="gate" id="v-lang" hidden>
+      <h1 class="display"><span>SIDE</span><span class="ink">QUEST</span><span>CLUB</span></h1>
+      <p class="sub">Choose your language · Elige tu idioma</p>
+      <div class="stack" id="langBtns"></div>
+    </section>
+
+    <!-- ===== QUOTE ===== -->
+    <section class="quote" id="v-quote" hidden>
+      <p data-i18n="quote"></p>
+      <cite data-i18n="quoteBy"></cite>
+      <small data-i18n="tap"></small>
+    </section>
+
+    <!-- ===== SPIN ===== -->
+    <section class="play" id="v-spin" hidden>
+      <div class="kicker" id="foundKicker"></div>
+      <h1 class="display" data-i18n="spinTitle"></h1>
+      <p class="sub" id="spinSub"></p>
+      <div class="machine">
+        <svg class="map" id="map" viewBox="0 0 320 118" aria-hidden="true">
+          <path class="trail" id="trail" d="M22 92C50 30 84 28 104 62S150 108 176 66 214 18 244 50 270 92 296 36"/>
+          <path class="walked" id="walked" d="M22 92C50 30 84 28 104 62S150 108 176 66 214 18 244 50 270 92 296 36"/>
+          <g id="pins"></g>
+          <g class="goal" id="goal"><path d="M287 27l18 18m0-18-18 18"/></g>
+          <circle class="runner" id="runner" r="8" cx="22" cy="92"/>
+        </svg>
+        <div class="window"><div class="reel q" id="reel">? ? ?</div></div>
+      </div>
+      <label class="devil"><input type="checkbox" id="devil"><span data-i18n="devil"></span></label>
+      <div class="stack" id="preSpin"><button class="btn red big" id="spinBtn" data-i18n="spin"></button></div>
+      <div class="stack" id="postSpin" hidden>
+        <button class="btn red" id="acceptBtn" data-i18n="accept"></button>
+        <button class="btn" id="againBtn" data-i18n="again"></button>
+      </div>
+      <div class="how">
+        <div><b>1</b><span data-i18n="how1"></span></div>
+        <div><b>2</b><span id="how2"></span></div>
+        <div><b>3</b><span data-i18n="how3"></span></div>
+      </div>
+    </section>
+
+    <!-- ===== ACCEPTED ===== -->
+    <section class="play" id="v-accept" hidden>
+      <div class="kicker" data-i18n="accKicker"></div>
+      <div class="ticket"><small>Side Quest</small><div id="accText"></div></div>
+      <p class="note" id="accNote"></p>
+      <div class="stack">
+        <button class="btn red" id="doneBtn" data-i18n="done"></button>
+        <button class="btn plain" id="changeBtn" data-i18n="change"></button>
+      </div>
+    </section>
+
+    <!-- ===== DONE + reveal ===== -->
+    <section class="play" id="v-done" hidden>
+      <div class="trophy">🏆</div>
+      <h1 class="display" data-i18n="doneTitle"></h1>
+      <p class="sub" data-i18n="doneSub"></p>
+      <div class="wlbox light" style="text-align:left;margin:22px 0">
+        <div class="twist" data-i18n="twist"></div>
+        <h2 class="display" data-i18n="pitchH"></h2>
+        <p class="sub" data-i18n="pitchP"></p>
+        <form class="wl" data-source="after-quest" novalidate>
+          <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
+          <p class="wlerr" hidden></p>
+          <button class="btn red" type="submit"></button>
+        </form>
+        <p class="demo" hidden></p>
+        <a class="more" data-to="club" data-i18n="seePlan"></a>
+      </div>
+      <div class="stack">
+        <button class="btn" id="anotherBtn" data-i18n="another"></button>
+        <a class="btn plain" data-to="wall" data-i18n="toWall"></a>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="../js/text.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/quests.js"></script>
+<script src="../js/shirts.js"></script>
+<script src="../js/play.js"></script>
+</body>
+</html>

@@ -132,3 +132,54 @@ body.hot .btn.red{color:#fff}
 .msg small{display:block;color:var(--mute);font-size:.75rem;margin-top:4px}
 .empty{color:var(--mute);text-align:center;padding:20px 0}
 .smallnote{font-size:.75rem;color:var(--mute);margin-top:10px}
+
+/* ===== v3: home + scan pages ===== */
+@font-face{font-family:"Permanent Marker";src:url(../fonts/permanent-marker.woff2) format("woff2");font-display:swap}
+.burger{position:relative}
+.peek{position:absolute;top:-13px;right:-9px;font-size:1.15rem;line-height:1;animation:peek 2.6s ease-in-out infinite;pointer-events:none}
+@keyframes peek{0%,70%,100%{transform:rotate(0) translateY(0)}78%{transform:rotate(-14deg) translateY(-3px)}86%{transform:rotate(12deg) translateY(-3px)}94%{transform:rotate(-6deg)}}
+.menu a.cur{opacity:.6}
+
+/* language + quote screens */
+.gate{min-height:72dvh;display:grid;align-content:center;gap:18px;text-align:center;padding:20px 0}
+.gate h1{font-size:clamp(3rem,15vw,4.6rem);color:var(--redt);transform:rotate(-3deg);margin-bottom:6px}
+.gate h1 span{display:block}.gate h1 .ink{color:var(--ink)}
+.gate .sub{margin:0 0 6px}
+.quote{min-height:78dvh;display:grid;align-content:center;gap:16px;text-align:center;cursor:pointer;padding:20px 6px}
+.quote p{font-family:"Bagel Fat One",sans-serif;font-size:clamp(2.2rem,10.5vw,3.2rem);line-height:1.05;color:var(--ink)}
+.quote p em{font-style:normal;color:var(--redt)}
+.quote cite{font-style:normal;color:var(--mute);font-size:.95rem}
+.quote small{color:var(--mute);font-size:.8rem;margin-top:22px;animation:blink 1.6s ease-in-out infinite}
+.quote p,.quote cite{animation:rise .7s ease-out both}.quote cite{animation-delay:.35s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:.35}}
+
+/* quest map */
+.machine{padding:12px}
+.map{display:block;width:100%;height:auto;border:2.5px solid var(--ink);border-radius:16px 16px 0 0;background:var(--bg)}
+.map .trail{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:2 9;stroke-linecap:round;opacity:.55}
+.map .walked{fill:none;stroke:var(--red);stroke-width:4;stroke-linecap:round}
+.map .pin circle{fill:var(--card);stroke:var(--ink);stroke-width:2.5;transition:fill .15s}
+.map .pin text{font:700 11px "DM Sans",sans-serif;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.map .pin.on circle{fill:var(--red)}.map .pin.on text{fill:#fff}
+.map .pin.on{animation:pop .3s cubic-bezier(.2,1.8,.4,1)}
+.map .pin{transform-box:fill-box;transform-origin:center}
+.map .goal path{fill:none;stroke:var(--redt);stroke-width:5;stroke-linecap:round}
+.map .goal{transform-box:fill-box;transform-origin:center}
+.map .goal.on{animation:pop .5s cubic-bezier(.2,2,.4,1)}
+.map .runner{fill:var(--red);stroke:var(--ink);stroke-width:2.5}
+@keyframes pop{from{transform:scale(.4)}to{transform:scale(1)}}
+.machine .window{border-radius:0 0 16px 16px;border-top:0;min-height:128px}
+.machine .lbl{margin:10px 0 0;display:none}
+.reel.sample{color:var(--mute);font-weight:500}
+
+/* brick wall */
+.wallbg{margin:0 -20px;padding:22px 20px 30px;min-height:46dvh;background-color:#b9b4ad;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='64'%3E%3Cg fill='%23f7f5f0'%3E%3Crect x='2' y='2' width='56' height='28' rx='2'/%3E%3Crect x='62' y='2' width='56' height='28' rx='2' fill='%23efece6'/%3E%3Crect x='-28' y='34' width='56' height='28' rx='2' fill='%23f2efe9'/%3E%3Crect x='32' y='34' width='56' height='28' rx='2'/%3E%3Crect x='92' y='34' width='56' height='28' rx='2' fill='%23f2efe9'/%3E%3C/g%3E%3C/svg%3E");background-size:120px 64px}
+.wallbg .msgs{display:flex;flex-direction:column;gap:26px}
+.wallbg .msg{background:none;border:0;padding:0;font-family:"Permanent Marker","Bagel Fat One",cursive;color:#c20c0c;font-size:1.65rem;line-height:1.15;text-shadow:0 0 1px rgba(194,12,12,.55),1px 2px 0 rgba(120,0,0,.12);max-width:92%}
+.wallbg .msg:nth-child(odd){transform:rotate(-2.5deg);align-self:flex-start}
+.wallbg .msg:nth-child(even){transform:rotate(2deg);align-self:flex-end;text-align:right}
+.wallbg .msg:nth-child(3n){font-size:1.35rem}
+.wallbg .msg small{font-family:"DM Sans",sans-serif;color:#6f625c;font-size:.7rem;text-shadow:none;margin-top:2px}
+.wallbg .empty{font-family:"Permanent Marker",cursive;color:#8d8780;font-size:1.3rem}
