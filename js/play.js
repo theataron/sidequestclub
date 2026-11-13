@@ -58,6 +58,8 @@ function mapTo(f){
   walked.style.strokeDasharray = (to - from) + ' ' + (LEN * 2);
   walked.style.strokeDashoffset = -from;
   walked.style.opacity = to - from < 1 ? 0 : 1;
+  const st = $('walkedStraight'), sd = Math.min(f * LEN, from);
+  st.style.strokeDasharray = sd + ' ' + LEN; st.style.opacity = sd < 1 ? 0 : 1;
 }
 function mapReset(){ pins.forEach(p => p.classList.remove('on')); goal.classList.remove('on'); $('map').classList.remove('off'); $('machine').classList.remove('won'); runner.style.display = ''; mapTo(0); }
 

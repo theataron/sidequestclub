@@ -115,7 +115,8 @@ const T = {
     "pkWord": "pack",
     "wallReport": "report",
     "wallReported": "Reported. Thanks.",
-    "abIg": "Say hi on Instagram:"
+    "abIg": "Say hi on Instagram:",
+    "c2t": "No club shirt needed. Keeping yours on is allowed 😉"
   },
   "es": {
     "mWall": "El Muro 🧱",
@@ -230,6 +231,7 @@ const T = {
     "pkWord": "pack",
     "wallReport": "denunciar",
     "wallReported": "Denunciado. Gracias.",
-    "abIg": "Escríbeme por Instagram:"
+    "abIg": "Escríbeme por Instagram:",
+    "c2t": "Sin camiseta del club. Puedes dejarte la tuya puesta 😉"
   }
 };
