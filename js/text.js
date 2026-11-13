@@ -82,7 +82,7 @@ const T = {
     "tap": "tap to continue",
     "foundAnon": "You found a club member 👀",
     "thePerson": "the person in the shirt",
-    "hKicker": "Coming soon · Madrid",
+    "hKicker": "Muy pronto · Madrid",
     "hLede": "The shirt that turns <b>strangers into side quests</b>.",
     "ctaList": "Join Side Quest Club",
     "ctaTry": "Try a quest now 🎰",
