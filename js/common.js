@@ -34,7 +34,7 @@ function initLang(dict){
 const Demo = {
   _wall(){ try{ return JSON.parse(store.get('sqc_demo_wall')||'[]'); }catch(e){ return []; } },
   getWall(){ return this._wall(); },
-  postMessage(d){ const w = this._wall(); w.unshift({ text:d.text, created:Date.now() }); store.set('sqc_demo_wall', JSON.stringify(w.slice(0,50))); return true; },
+  postMessage(d){ const w = this._wall(); w.unshift({ text:d.text, ig:d.ig||'', created:Date.now() }); store.set('sqc_demo_wall', JSON.stringify(w.slice(0,50))); return true; },
   joinWaitlist(){ return true; },
   logEvent(){ return true; }
 };

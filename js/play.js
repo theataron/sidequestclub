@@ -29,7 +29,7 @@ LANGS.forEach(l => {
 });
 function startQuote(){
   show('quote');
-  quoteTimer = setTimeout(endQuote, 4200);
+  quoteTimer = setTimeout(endQuote, 5500);
 }
 function endQuote(){ clearTimeout(quoteTimer); try{ sessionStorage.setItem('sqc_quote','1'); }catch(e){} show('spin'); }
 $('v-quote').onclick = endQuote;
@@ -37,7 +37,8 @@ $('v-quote').onclick = endQuote;
 /* ----- the quest map ----- */
 const trail = $('trail'), walked = $('walked'), runner = $('runner'), goal = $('goal');
 const LEN = trail.getTotalLength();
-const STOPS = [.16,.33,.5,.67,.84];
+const BRANCH = 68 / LEN;                       /* where the route leaves the usual road */
+const STOPS = [1,2,3,4].map(i => BRANCH + (1 - BRANCH) * i / 5);
 const pins = STOPS.map(f => {
   const p = trail.getPointAtLength(f * LEN);
   const g = document.createElementNS('http://www.w3.org/2000/svg','g'); g.setAttribute('class','pin');
@@ -49,9 +50,9 @@ function mapTo(f){
   runner.setAttribute('cx', p.x); runner.setAttribute('cy', p.y);
   walked.style.strokeDasharray = (f * LEN) + ' ' + LEN;
 }
-function mapReset(){ pins.forEach(p => p.classList.remove('on')); goal.classList.remove('on'); runner.style.display = ''; mapTo(0); }
+function mapReset(){ pins.forEach(p => p.classList.remove('on')); goal.classList.remove('on'); $('map').classList.remove('off'); $('machine').classList.remove('won'); runner.style.display = ''; mapTo(0); }
 
-const deck = () => $('devil').checked ? QUESTS.devil : QUESTS.classic;
+const deck = () => $('devil').checked ? QUESTS.devil : QUESTS.classic.concat((owner && owner.quests) || []);
 const txt = q => q[LANG === 'es' ? 1 : 0];
 function resetSpin(){ current = null; mapReset(); const r = $('reel'); r.className = 'reel q'; r.textContent = '? ? ?'; $('preSpin').hidden = false; $('postSpin').hidden = true; }
 function pick(){
@@ -69,17 +70,19 @@ function spin(){
   /* a few other quests flash by on the way, so people see how many there are */
   const others = deck().filter(q => q !== final).sort(() => Math.random() - .5).slice(0, STOPS.length);
   const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const DUR = still ? 0 : 3800, t0 = performance.now(); let i = 0;
+  const DUR = still ? 0 : 4600, t0 = performance.now(); let i = 0;
   function land(){
-    mapTo(1); runner.style.display = 'none'; goal.classList.add('on');
+    mapTo(1); runner.style.display = 'none'; goal.classList.add('on'); $('map').classList.add('off'); $('machine').classList.add('won');
     current = final; setReel(txt(final), 'land'); if (navigator.vibrate) navigator.vibrate(40);
     spinning = false; $('spinBtn').disabled = false; $('preSpin').hidden = true; $('postSpin').hidden = false; track('spin');
   }
   (function frame(now){
-    const f = DUR ? Math.min(1, (now - t0) / DUR) : 1;
+    const p = DUR ? Math.min(1, (now - t0) / DUR) : 1;
+    const f = 1 - Math.pow(1 - p, 2);            /* fast at first, slowing down as it gets close */
     mapTo(f);
+    if (f > BRANCH) $('map').classList.add('off');
     while (i < STOPS.length && f >= STOPS[i]){ pins[i].classList.add('on'); if (others[i]) setReel(txt(others[i]), 'sample tick'); i++; }
-    if (f < 1) requestAnimationFrame(frame); else land();
+    if (p < 1) requestAnimationFrame(frame); else land();
   })(t0);
 }
 $('spinBtn').onclick = spin;
@@ -92,8 +95,9 @@ $('devil').onchange = () => { document.body.classList.toggle('hot', $('devil').c
 
 /* ----- words that depend on the language and on whose shirt it is ----- */
 document.addEventListener('langchange', () => {
-  $('foundKicker').textContent = demo ? t('foundDemo') : (owner ? fill('found') : t('foundAnon'));
-  $('spinSub').textContent = demo ? t('spinSubDemo') : fill('spinSub');
+  $('foundKicker').textContent = owner ? fill('found') : t('foundAnon');
+  $('spinSub').textContent = fill('spinSub');
+  $('lblUsual').textContent = t('mapUsual'); $('lblSide').textContent = '↗ ' + t('mapSide');
   $('how2').textContent = fill('how2');
   $('accNote').textContent = fill('accNote');
   if (current && !spinning){ $('reel').textContent = txt(current); $('accText').textContent = txt(current); }

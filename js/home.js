@@ -31,14 +31,18 @@ function paintWall(){
   if (!wallData) return;
   if (!wallData.length){ const p = document.createElement('p'); p.className = 'empty'; p.textContent = t('wallEmpty'); box.appendChild(p); return; }
   wallData.forEach(m => { const d = document.createElement('div'); d.className = 'msg'; d.textContent = m.text;
-    const s = document.createElement('small'); s.textContent = ago(m.created); d.appendChild(s); box.appendChild(d); });
+    const s = document.createElement('small');
+    if (m.ig){ const a = document.createElement('a'); a.href = 'https://instagram.com/' + encodeURIComponent(m.ig); a.target = '_blank'; a.rel = 'noopener'; a.textContent = '@' + m.ig; s.appendChild(a); s.appendChild(document.createTextNode(' · ')); }
+    s.appendChild(document.createTextNode(ago(m.created))); d.appendChild(s); box.appendChild(d); });
 }
 async function loadWall(){ $('wallDemo').hidden = !!SQC.API_URL; try{ wallData = await api('getWall'); }catch(e){ wallData = wallData || []; } paintWall(); }
 $('wallForm').addEventListener('submit', async e => {
   e.preventDefault();
   const ta = $('wallText'), b = $('wallSend'), v = ta.value.trim(); if (!v) return;
   b.disabled = true; b.textContent = t('wallSending');
-  try{ await api('postMessage', { text: v }); ta.value = ''; await loadWall(); }
+  const ig = ($('wallIg').value.trim().replace(/^@/,'').match(/^[\w.]{1,30}$/) || [''])[0];
+  $('wallIg').value = ig ? '@' + ig : '';
+  try{ await api('postMessage', { text: v, ig }); ta.value = ''; await loadWall(); }
   catch(x){ const p = document.createElement('p'); p.className = 'wlerr'; p.style.color = 'var(--redt)'; p.textContent = t('wallErr'); $('wallForm').appendChild(p); setTimeout(() => p.remove(), 4000); }
   b.disabled = false; b.textContent = t('wallSend');
 });

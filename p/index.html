@@ -38,8 +38,23 @@
 
     <!-- ===== QUOTE ===== -->
     <section class="quote" id="v-quote" hidden>
+      <svg class="routes" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><mask id="rm" maskUnits="userSpaceOnUse" x="0" y="0" width="390" height="844">
+          <path class="m" pathLength="1" d="M-10 120C60 60 120 190 200 130S330 40 400 110"/>
+          <path class="m" pathLength="1" d="M400 500C330 550 300 450 230 500S90 580 30 520-20 550-20 550"/>
+          <path class="m" pathLength="1" d="M-10 640C70 580 110 700 190 650S300 560 340 620 400 700 400 700"/>
+          <path class="m" pathLength="1" d="M60 860C90 790 180 820 210 760S300 740 330 790"/>
+        </mask></defs>
+        <g mask="url(#rm)">
+          <path class="r" d="M-10 120C60 60 120 190 200 130S330 40 400 110"/>
+          <path class="r red" d="M400 500C330 550 300 450 230 500S90 580 30 520-20 550-20 550"/>
+          <path class="r red" d="M-10 640C70 580 110 700 190 650S300 560 340 620 400 700 400 700"/>
+          <path class="r" d="M60 860C90 790 180 820 210 760S300 740 330 790"/>
+        </g>
+        <path class="x" d="M322 782l16 16m0-16-16 16M192 122l16 16m0-16-16 16"/>
+      </svg>
       <p data-i18n="quote"></p>
-      <cite data-i18n="quoteBy"></cite>
+      <div class="q2" data-i18n="quote2"></div>
       <small data-i18n="tap"></small>
     </section>
 
@@ -48,15 +63,21 @@
       <div class="kicker" id="foundKicker"></div>
       <h1 class="display" data-i18n="spinTitle"></h1>
       <p class="sub" id="spinSub"></p>
-      <div class="machine">
-        <svg class="map" id="map" viewBox="0 0 320 118" aria-hidden="true">
-          <path class="trail" id="trail" d="M22 92C50 30 84 28 104 62S150 108 176 66 214 18 244 50 270 92 296 36"/>
-          <path class="walked" id="walked" d="M22 92C50 30 84 28 104 62S150 108 176 66 214 18 244 50 270 92 296 36"/>
+      <div class="machine" id="machine">
+        <svg class="map" id="map" viewBox="0 0 320 124" aria-hidden="true">
+          <path class="road" d="M16 100H304"/>
+          <text class="lbl-usual" id="lblUsual" x="304" y="116" text-anchor="end"></text>
+          <text class="lbl-side" id="lblSide" x="112" y="60" transform="rotate(-24 112 60)"></text>
+          <path class="ghost" id="trail" d="M16 100H84C112 100 116 74 140 66S172 86 196 62 226 26 250 44 276 50 294 24"/>
+          <path class="walked" id="walked" d="M16 100H84C112 100 116 74 140 66S172 86 196 62 226 26 250 44 276 50 294 24"/>
           <g id="pins"></g>
-          <g class="goal" id="goal"><path d="M287 27l18 18m0-18-18 18"/></g>
-          <circle class="runner" id="runner" r="8" cx="22" cy="92"/>
+          <g class="goal" id="goal">
+            <path class="rays" d="M294 2v6M312 8l-4 5M276 8l4 5M318 24h-6M270 24h6"/>
+            <path class="star" d="M294 10l4.4 9 9.9 1.4-7.2 7 1.7 9.8-8.8-4.6-8.8 4.6 1.7-9.8-7.2-7 9.9-1.4z"/>
+          </g>
+          <circle class="runner" id="runner" r="8" cx="16" cy="100"/>
         </svg>
-        <div class="window"><div class="reel q" id="reel">? ? ?</div></div>
+        <div class="window"><div class="lbl" data-i18n="unlocked"></div><div class="reel q" id="reel">? ? ?</div></div>
       </div>
       <label class="devil"><input type="checkbox" id="devil"><span data-i18n="devil"></span></label>
       <div class="stack" id="preSpin"><button class="btn red big" id="spinBtn" data-i18n="spin"></button></div>

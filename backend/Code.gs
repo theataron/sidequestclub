@@ -6,7 +6,7 @@
  */
 const TABS = {
   Waitlist: ['created', 'email', 'lang', 'source', 'shirt'],
-  Wall:     ['created', 'text', 'lang', 'shirt', 'hidden'],
+  Wall:     ['created', 'text', 'ig', 'lang', 'shirt', 'hidden'],
   Events:   ['created', 'type', 'shirt', 'quest', 'lang']
 };
 
@@ -23,8 +23,8 @@ function doGet(e) {
   try {
     if ((e.parameter.fn || '') !== 'getWall') return out({ ok: false, error: 'unknown' });
     const rows = tab('Wall').getDataRange().getValues().slice(1);
-    const data = rows.filter(r => r[1] && !r[4]).slice(-50).reverse()
-      .map(r => ({ text: String(r[1]), created: new Date(r[0]).getTime() }));
+    const data = rows.filter(r => r[1] && !r[5]).slice(-50).reverse()
+      .map(r => ({ text: String(r[1]), ig: String(r[2] || ''), created: new Date(r[0]).getTime() }));
     return out({ ok: true, data: data });
   } catch (err) { return out({ ok: false, error: String(err) }); }
 }
@@ -44,7 +44,8 @@ function doPost(e) {
     if (d.fn === 'postMessage') {
       const text = clean(String(d.text || '').trim(), 280);
       if (!text) return out({ ok: false, error: 'empty' });
-      tab('Wall').appendRow([now, text, lang, shirt, '']);
+      const ig = (String(d.ig || '').replace(/^@/, '').match(/^[\w.]{1,30}$/) || [''])[0];
+      tab('Wall').appendRow([now, text, ig, lang, shirt, '']);
       return out({ ok: true, data: true });
     }
     if (d.fn === 'logEvent') {
