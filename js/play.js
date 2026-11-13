@@ -37,8 +37,13 @@ $('v-quote').onclick = endQuote;
 /* ----- the quest map ----- */
 const trail = $('trail'), walked = $('walked'), runner = $('runner'), goal = $('goal');
 const LEN = trail.getTotalLength();
-const BRANCH = 68 / LEN;                       /* where the route leaves the usual road */
-const STOPS = [1,2,3,4].map(i => BRANCH + (1 - BRANCH) * i / 5);
+const BRANCH = 88 / LEN;                       /* where the route leaves the usual road */
+/* side quests sit at each peak and dip, above and below the usual road; the last one (the star) is yours */
+const STOPS = [[140,28],[180,96],[220,28],[260,96]].map(([x,y]) => {
+  let best = 0, bd = 1e9;
+  for (let l = 0; l <= LEN; l += 1){ const p = trail.getPointAtLength(l), d = (p.x-x)**2 + (p.y-y)**2; if (d < bd){ bd = d; best = l; } }
+  return best / LEN;
+});
 const pins = STOPS.map(f => {
   const p = trail.getPointAtLength(f * LEN);
   const g = document.createElementNS('http://www.w3.org/2000/svg','g'); g.setAttribute('class','pin');
@@ -97,7 +102,7 @@ $('devil').onchange = () => { document.body.classList.toggle('hot', $('devil').c
 document.addEventListener('langchange', () => {
   $('foundKicker').textContent = owner ? fill('found') : t('foundAnon');
   $('spinSub').textContent = fill('spinSub');
-  $('lblUsual').textContent = t('mapUsual'); $('lblSide').textContent = '↗ ' + t('mapSide');
+  $('lblUsual').textContent = t('mapUsual'); $('lblSide').textContent = t('mapSide') + ' ↗';
   $('how2').textContent = fill('how2');
   $('accNote').textContent = fill('accNote');
   if (current && !spinning){ $('reel').textContent = txt(current); $('accText').textContent = txt(current); }

@@ -33,7 +33,11 @@ function paintWall(){
   wallData.forEach(m => { const d = document.createElement('div'); d.className = 'msg'; d.textContent = m.text;
     const s = document.createElement('small');
     if (m.ig){ const a = document.createElement('a'); a.href = 'https://instagram.com/' + encodeURIComponent(m.ig); a.target = '_blank'; a.rel = 'noopener'; a.textContent = '@' + m.ig; s.appendChild(a); s.appendChild(document.createTextNode(' · ')); }
-    s.appendChild(document.createTextNode(ago(m.created))); d.appendChild(s); box.appendChild(d); });
+    s.appendChild(document.createTextNode(ago(m.created) + ' · '));
+    const r = document.createElement('button'); r.className = 'rep'; r.textContent = t('wallReport');
+    r.onclick = async () => { r.disabled = true; try{ await api('reportMessage', { created: m.created, text: m.text }); }catch(e){}
+      d.textContent = t('wallReported'); d.classList.add('gone'); };
+    s.appendChild(r); d.appendChild(s); box.appendChild(d); });
 }
 async function loadWall(){ $('wallDemo').hidden = !!SQC.API_URL; try{ wallData = await api('getWall'); }catch(e){ wallData = wallData || []; } paintWall(); }
 $('wallForm').addEventListener('submit', async e => {

@@ -20,6 +20,9 @@ Aron has always loved going out and meeting new people, in clubs and in any soci
 
 ## Where it's going
 1. Shirts with a personal QR code, so anyone can be the person who starts the side quest.
-2. A way to play without a shirt (Shirtless Pass).
-3. Group packs and new quest decks.
+2. Shirtless Pass: no shirt needed. Friends each get side quests for the night, go up to strangers themselves, and compare who did the most.
+3. Squad packs, and quest packs for different nights (Erasmus, Spicy, Festival, city packs).
+
+## Future: photo and video proof (not built)
+If people can upload proof of a completed quest, every photo needs a report button, and reported photos are hidden until reviewed.
 4. A community of people who say yes to side quests, starting in Madrid.

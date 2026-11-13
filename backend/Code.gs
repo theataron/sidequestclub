@@ -3,10 +3,11 @@
  * Saves email sign-ups, wall messages and scan/quest events into three tabs:
  * "Waitlist", "Wall" and "Events". The tabs are created automatically.
  * To hide a wall message: type anything into its "hidden" column.
+ * A message reported by 3 visitors is hidden automatically (hidden = "reported").
  */
 const TABS = {
   Waitlist: ['created', 'email', 'lang', 'source', 'shirt'],
-  Wall:     ['created', 'text', 'ig', 'lang', 'shirt', 'hidden'],
+  Wall:     ['created', 'text', 'ig', 'lang', 'shirt', 'hidden', 'reports'],
   Events:   ['created', 'type', 'shirt', 'quest', 'lang']
 };
 
@@ -46,6 +47,18 @@ function doPost(e) {
       if (!text) return out({ ok: false, error: 'empty' });
       const ig = (String(d.ig || '').replace(/^@/, '').match(/^[\w.]{1,30}$/) || [''])[0];
       tab('Wall').appendRow([now, text, ig, lang, shirt, '']);
+      return out({ ok: true, data: true });
+    }
+    if (d.fn === 'reportMessage') {
+      const sh = tab('Wall'), rows = sh.getDataRange().getValues();
+      for (let i = rows.length - 1; i >= 1; i--) {
+        if (new Date(rows[i][0]).getTime() === Number(d.created) && String(rows[i][1]) === String(d.text)) {
+          const n = (Number(rows[i][6]) || 0) + 1;
+          sh.getRange(i + 1, 7).setValue(n);
+          if (n >= 3 && !rows[i][5]) sh.getRange(i + 1, 6).setValue('reported');
+          break;
+        }
+      }
       return out({ ok: true, data: true });
     }
     if (d.fn === 'logEvent') {

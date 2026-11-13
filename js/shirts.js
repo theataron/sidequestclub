@@ -6,8 +6,7 @@ const SHIRTS = {
   aron: {
     name: 'Aron',
     quests: [
-      ['Kiss me (I’m gay 🏳️‍🌈)', 'Bésame (soy gay 🏳️‍🌈)'],
-      ['Make me laugh in under 30 seconds', 'Hazme reír en menos de 30 segundos']
+      ['Kiss me (I’m gay 🏳️‍🌈)', 'Bésame (soy gay 🏳️‍🌈)']
     ]
   }
 };

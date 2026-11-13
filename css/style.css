@@ -209,3 +209,119 @@ body.hot .btn.red{color:#fff}
 .wallbg .msg:nth-child(3n){font-size:1.35rem}
 .wallbg .msg small{font-family:"DM Sans",sans-serif;color:#6f625c;font-size:.7rem;text-shadow:none;margin-top:2px}
 .wallbg .empty{font-family:"Permanent Marker",cursive;color:#8d8780;font-size:1.3rem}
+
+/* ===== v5: dashed accents, launch discount, map, coming-soon animations ===== */
+:root{--dash:2.5px dashed var(--ink)}
+.btn:not(.red):not(.plain){border-style:dashed}
+.btn.red{outline:2px dashed var(--red);outline-offset:4px}
+.btn.red:active{outline-offset:2px}
+.step,.chip,.cardx{border-style:dashed}
+.lang,.burger{border-style:dashed}
+.ticket{outline:2.5px dashed rgba(255,255,255,.75);outline-offset:-12px}
+.wlbox{outline:2.5px dashed var(--red);outline-offset:7px}
+.machine .window{border-style:dashed}
+.ctaq{font-weight:700;margin:0 0 10px}
+
+/* launch-discount coupon */
+.coupon{position:relative;display:grid;gap:1px;text-align:center;border:3px dashed var(--red);border-radius:14px;padding:12px 14px;margin:2px 0 16px;background:rgba(189,10,10,.08);transform:rotate(-1.5deg)}
+.coupon b{font:400 1.45rem/1.05 "Bagel Fat One",sans-serif;color:#ff5a4d;letter-spacing:.01em}
+.coupon small{font-size:.82rem;opacity:.85}
+.coupon .sc{position:absolute;left:-13px;top:50%;transform:translateY(-50%) rotate(-90deg);font-size:1.1rem;color:var(--red);background:inherit}
+.wlbox .coupon{color:#fff}
+.light .coupon,.light.wlbox .coupon{color:var(--ink)}
+.light .coupon b{color:var(--redt)}
+.coupon::after{content:"🎟️";position:absolute;right:-10px;top:-14px;font-size:1.5rem;transform:rotate(14deg);animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-6deg) scale(1.08)}}
+
+/* spin page: both answers above the fold */
+#v-spin h1{font-size:clamp(1.9rem,9vw,2.5rem);margin:4px 0 6px}
+#v-spin .sub{margin-bottom:6px;font-size:.98rem}
+#v-spin .machine{margin:12px 0 16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row2 .btn{padding:15px 8px;font-size:1rem}
+#v-spin .devil{margin:16px 0 4px}
+.machine .window{min-height:118px;padding:14px}
+.reel{font-size:1.25rem}
+
+/* map labels: same small caps style, side quest in red */
+.map .lbl-usual,.map .lbl-side{font:700 9px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.map .lbl-usual{fill:var(--mute)}
+.map .lbl-side{fill:var(--redt);opacity:1}
+.map.off .lbl-side{opacity:1}
+
+/* wall report */
+.wallbg .msg .rep{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
+.wallbg .msg.gone{font:500 .85rem "DM Sans",sans-serif;color:#6f625c;text-shadow:none}
+
+/* ===== coming-soon card art ===== */
+.cardx .art{height:150px;margin:-4px -6px 12px;border-radius:14px;background:var(--bg);border:2px dashed var(--ink);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.cardx .art svg{height:100%;width:auto}
+/* shirt + scan */
+.a-shirt .tee{fill:var(--red);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.a-shirt .qbg{fill:#fff;stroke:var(--ink);stroke-width:2}
+.a-shirt .qd{fill:var(--ink)}
+.a-shirt .beam{fill:#ffc531;animation:beam 1.8s ease-in-out infinite;opacity:.9}
+@keyframes beam{0%,100%{transform:translateY(0)}50%{transform:translateY(36px)}}
+.a-shirt .phone rect{fill:var(--card);stroke:var(--ink);stroke-width:2.5}
+.a-shirt .phone .scr{fill:var(--bg);stroke-width:1.5}
+.a-shirt .pl{fill:var(--mute);stroke:none!important;opacity:.5}
+.a-shirt .pstar{fill:#ffc531;stroke:var(--ink);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pstar 1.8s ease-in-out infinite}
+@keyframes pstar{0%,40%{transform:scale(0)}60%{transform:scale(1.25)}75%,100%{transform:scale(1)}}
+.a-shirt .ray{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:3 6;animation:march 1s linear infinite}
+@keyframes march{to{stroke-dashoffset:-18}}
+/* shirtless pass */
+.art.pass{justify-content:space-around;padding:0 6px}
+.art.pass svg{height:150px;flex:none}
+.a-guy .skin{fill:#e9b48f;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.a-guy .hair{fill:var(--ink)}
+.a-guy .shades{fill:var(--ink);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.a-guy .smile,.a-guy .line{fill:none;stroke:#7a3e22;stroke-width:2;stroke-linecap:round}
+.a-guy .cord{fill:none;stroke:var(--red);stroke-width:3}
+.a-guy .badge{fill:#fff;stroke:var(--ink);stroke-width:2}
+.a-guy .bt{font:400 9px "Bagel Fat One",sans-serif;fill:var(--red);text-anchor:middle}
+.a-guy .lanyard{transform-origin:75px 76px;animation:swing 2.6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.a-guy .spark{fill:#ffc531;stroke:var(--ink);stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:twinkle 1.6s ease-in-out infinite}
+.a-guy .s2{animation-delay:.8s}
+@keyframes twinkle{0%,100%{transform:scale(.3);opacity:.3}50%{transform:scale(1.1);opacity:1}}
+.lb{flex:1;max-width:150px;display:grid;gap:7px;font-size:.78rem;font-weight:700}
+.lbh{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.lr{display:grid;grid-template-columns:42px 1fr 16px;align-items:center;gap:6px}
+.lr i{display:block;height:10px;border-radius:99px;background:var(--red);border:1.5px solid var(--ink);width:var(--w);animation:grow 3.2s ease-out infinite;animation-delay:var(--d)}
+.lr:first-of-type i{background:#ffc531}
+@keyframes grow{0%{width:4%}55%,100%{width:var(--w)}}
+/* squad */
+.art.squad{gap:6px;align-items:flex-end;padding-bottom:22px}
+.art.squad svg{height:64px;width:auto;animation:hop 1.6s ease-in-out infinite}
+.art.squad svg path{stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.art.squad svg rect{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.art.squad svg:nth-of-type(1) path{fill:var(--red)}
+.art.squad svg:nth-of-type(2) path{fill:var(--ink)}.art.squad svg:nth-of-type(2){animation-delay:.2s}
+.art.squad svg:nth-of-type(3) path{fill:#ffc531}.art.squad svg:nth-of-type(3){animation-delay:.4s}
+.art.squad svg:nth-of-type(4) path{fill:var(--blush)}.art.squad svg:nth-of-type(4){animation-delay:.6s}
+@keyframes hop{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-18px)}}
+.art.squad .crown{position:absolute;top:18px;left:calc(50% - 95px);font-size:1.5rem;animation:crown 6.4s steps(1) infinite}
+@keyframes crown{0%{left:calc(50% - 95px)}25%{left:calc(50% - 35px)}50%{left:calc(50% + 28px)}75%{left:calc(50% - 35px)}}
+/* quest packs */
+.art.packs{perspective:600px}
+.pk{position:absolute;width:86px;height:118px;border:2.5px solid var(--ink);border-radius:12px;display:grid;place-content:center;text-align:center;gap:2px;box-shadow:3px 3px 0 var(--ink);transform-origin:50% 120%;animation:fan 4s ease-in-out infinite}
+.pk em{font-style:normal;font-size:1.6rem}
+.pk b{font:400 1.05rem "Bagel Fat One",sans-serif}
+.pk small{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pk::before{content:"";position:absolute;inset:5px;border:1.5px dashed currentColor;border-radius:8px;opacity:.5}
+.p1{background:#2a5bd7;color:#fff;--r:-24deg;--x:-66px}
+.p2{background:var(--red);color:#fff;--r:-8deg;--x:-22px}
+.p3{background:#ffc531;color:var(--ink);--r:8deg;--x:22px}
+.p4{background:var(--card);color:var(--ink);--r:24deg;--x:66px}
+@keyframes fan{0%,12%,100%{transform:translateX(0) rotate(0)}38%,80%{transform:translateX(var(--x)) rotate(var(--r))}}
+@media (prefers-reduced-motion:reduce){.cardx .art *, .coupon::after{animation:none!important}.pk{transform:translateX(var(--x)) rotate(var(--r))}}
+.pk{width:72px;height:104px}
+.pk b{font-size:.92rem}
+.pk em{font-size:1.4rem}
+.p1{--r:-18deg;--x:-58px}.p2{--r:-6deg;--x:-19px}.p3{--r:6deg;--x:19px}.p4{--r:18deg;--x:58px}
+.art.packs{align-items:flex-start;padding-top:10px}
+.pk{transform-origin:50% 230%}
+.p1{--r:-27deg;--x:0px}.p2{--r:-9deg;--x:0px}.p3{--r:9deg;--x:0px}.p4{--r:27deg;--x:0px}
+.pk{width:64px;height:92px;transform-origin:50% 300%}
+.pk b{font-size:.8rem}.pk em{font-size:1.25rem}.pk small{font-size:.58rem}
+.p1{--r:-24deg}.p2{--r:-8deg}.p3{--r:8deg}.p4{--r:24deg}

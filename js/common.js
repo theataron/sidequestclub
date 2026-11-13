@@ -35,6 +35,7 @@ const Demo = {
   _wall(){ try{ return JSON.parse(store.get('sqc_demo_wall')||'[]'); }catch(e){ return []; } },
   getWall(){ return this._wall(); },
   postMessage(d){ const w = this._wall(); w.unshift({ text:d.text, ig:d.ig||'', created:Date.now() }); store.set('sqc_demo_wall', JSON.stringify(w.slice(0,50))); return true; },
+  reportMessage(d){ store.set('sqc_demo_wall', JSON.stringify(this._wall().filter(m => m.created !== d.created))); return true; },
   joinWaitlist(){ return true; },
   logEvent(){ return true; }
 };
@@ -51,8 +52,8 @@ function track(type, extra){ if (SQC.API_URL) api('logEvent', Object.assign({ ty
 
 /* ----- email sign-up forms (any <form class="wl">) ----- */
 const WL_TEXT = {
-  en:{ ph:'Your email', send:'Keep me posted', sending:'Sending…', ok:'You’re on the list 🎉 You’ll hear from us before anyone else.', bad:'That email doesn’t look right.', err:'Couldn’t connect. Try again.', demo:'Demo mode — sign-ups are not being saved yet.' },
-  es:{ ph:'Tu email', send:'Avisadme', sending:'Enviando…', ok:'Ya estás en la lista 🎉 Te enteras antes que nadie.', bad:'Ese email no parece correcto.', err:'No se pudo conectar. Inténtalo otra vez.', demo:'Modo demo — todavía no se guardan los registros.' }
+  en:{ ph:'Your email', send:'Get my launch discount 🎟️', sending:'Sending…', ok:'You’re in Side Quest Club 🎉 Your launch discount is saved — we’ll email you when the shirts drop.', bad:'That email doesn’t look right.', err:'Couldn’t connect. Try again.', demo:'Demo mode — sign-ups are not being saved yet.' },
+  es:{ ph:'Tu email', send:'Quiero mi descuento 🎟️', sending:'Enviando…', ok:'Ya estás en Side Quest Club 🎉 Tu descuento está guardado — te escribimos cuando salgan las camisetas.', bad:'Ese email no parece correcto.', err:'No se pudo conectar. Inténtalo otra vez.', demo:'Modo demo — todavía no se guardan los registros.' }
 };
 function initWaitlist(){
   document.querySelectorAll('form.wl').forEach(form => {

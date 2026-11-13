@@ -37,6 +37,7 @@
         <h1 class="display"><span>SIDE</span><span class="ink">QUEST</span><span>CLUB</span></h1>
         <svg class="loop" viewBox="0 0 340 60" aria-hidden="true"><path d="M8 34C60 10 150 4 220 12c50 6 70 22 40 32-34 11-110 8-130-6-16-12 30-26 96-24 40 1 78 12 98 30m0 0-4-17m4 17-17-1"/></svg>
         <p class="lede" data-i18n="hLede"></p>
+        <p class="ctaq" data-i18n="ctaQ"></p>
         <div class="stack">
           <a class="btn red" href="#club" data-i18n="ctaList"></a>
           <a class="btn" href="p/?s=demo" data-i18n="ctaTry"></a>
@@ -63,7 +64,8 @@
         <div class="wlbox">
           <h2 class="display" data-i18n="listH"></h2>
           <p class="sub" data-i18n="listP"></p>
-          <form class="wl" data-source="home" novalidate>
+          <div class="coupon"><span class="sc" aria-hidden="true">✂</span><b data-i18n="coupon"></b><small data-i18n="couponS"></small></div>
+        <form class="wl" data-source="home" novalidate>
             <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
             <p class="wlerr" hidden></p>
             <button class="btn red" type="submit"></button>
@@ -111,14 +113,66 @@
       <h1 class="display" data-i18n="clTitle"></h1>
       <p data-i18n="clIntro"></p>
       <div class="cards">
-        <div class="cardx"><span class="tag" data-i18n="tagFirst"></span><h3 data-i18n="c1h"></h3><p data-i18n="c1p"></p></div>
-        <div class="cardx"><span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c2h"></h3><p data-i18n="c2p"></p></div>
-        <div class="cardx"><span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c3h"></h3><p data-i18n="c3p"></p></div>
-        <div class="cardx"><span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c4h"></h3><p data-i18n="c4p"></p></div>
+        <div class="cardx">
+          <div class="art"><svg viewBox="0 0 300 140" class="a-shirt" aria-hidden="true">
+            <path class="tee" d="M70 30L95 18Q110 28 125 18L150 30 170 55 152 66 146 58V128H74V58L68 66 50 55Z"/>
+            <g class="qr"><rect x="92" y="62" width="36" height="36" rx="2" class="qbg"/>
+              <path d="M95 65h9v9h-9zM116 65h9v9h-9zM95 86h9v9h-9z" class="qd"/>
+              <path d="M107 66h3v3h-3zM107 72h6v3h-6zM98 77h3v6h-3zM104 78h6v3h-6zM113 77h3v3h-3zM119 78h6v3h-6zM110 84h3v6h-3zM116 86h3v3h-3zM122 85h3v9h-3zM107 91h3v4h-3zM116 92h4v3h-4z" class="qd"/></g>
+            <rect class="beam" x="88" y="60" width="44" height="3" rx="1.5"/>
+            <g class="phone"><rect x="205" y="34" width="56" height="98" rx="10"/><rect x="211" y="46" width="44" height="74" rx="4" class="scr"/>
+              <path class="pstar" d="M233 66l3.6 7.3 8 1.2-5.8 5.6 1.4 8-7.2-3.8-7.2 3.8 1.4-8-5.8-5.6 8-1.2z"/>
+              <rect class="pl" x="218" y="96" width="30" height="4" rx="2"/><rect class="pl" x="222" y="104" width="22" height="4" rx="2"/></g>
+            <path class="ray" d="M140 80C165 70 185 70 200 78" />
+          </svg></div>
+          <span class="tag" data-i18n="tagFirst"></span><h3 data-i18n="c1h"></h3><p data-i18n="c1p"></p>
+        </div>
+        <div class="cardx">
+          <div class="art pass">
+            <svg viewBox="0 0 150 150" class="a-guy" aria-hidden="true">
+              <path class="skin" d="M28 150C28 112 34 90 50 82L64 76V64H86V76L100 82C116 90 122 112 122 150Z"/>
+              <circle class="skin" cx="75" cy="44" r="22"/>
+              <path class="hair" d="M53 40C52 22 64 16 76 17 90 17 99 26 97 40 92 32 82 28 70 30 62 31 56 35 53 40Z"/>
+              <path class="shades" d="M58 44h14v6c0 4-3 6-7 6s-7-2-7-6zM78 44h14v6c0 4-3 6-7 6s-7-2-7-6zM72 46h6"/>
+              <path class="smile" d="M68 60q7 5 14 0"/>
+              <path class="line" d="M52 100q12 8 22 0M76 100q12 8 22 0M75 92v46M64 116h22M65 128h20"/>
+              <g class="lanyard"><path class="cord" d="M66 76L72 104M84 76L78 104"/>
+                <rect x="60" y="102" width="30" height="22" rx="3" class="badge"/><text x="75" y="116" class="bt">PASS</text></g>
+              <path class="spark s1" d="M120 70l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+              <path class="spark s2" d="M24 98l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+            </svg>
+            <div class="lb"><div class="lbh" data-i18n="lbTonight"></div>
+              <div class="lr"><span data-i18n="lbYou"></span><i style="--w:92%;--d:0s"></i><b>7</b></div>
+              <div class="lr"><span>Lena</span><i style="--w:70%;--d:.2s"></i><b>5</b></div>
+              <div class="lr"><span>Marco</span><i style="--w:45%;--d:.4s"></i><b>3</b></div>
+            </div>
+          </div>
+          <span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c2h"></h3><p data-i18n="c2p"></p>
+        </div>
+        <div class="cardx">
+          <div class="art squad" aria-hidden="true">
+            <span class="crown">👑</span>
+            <svg viewBox="0 0 60 56"><path d="M15 6L24 2Q30 6 36 2L45 6 56 18 48 24 45 20V54H15V20L12 24 4 18Z"/><rect x="24" y="26" width="12" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 60 56"><path d="M15 6L24 2Q30 6 36 2L45 6 56 18 48 24 45 20V54H15V20L12 24 4 18Z"/><rect x="24" y="26" width="12" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 60 56"><path d="M15 6L24 2Q30 6 36 2L45 6 56 18 48 24 45 20V54H15V20L12 24 4 18Z"/><rect x="24" y="26" width="12" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 60 56"><path d="M15 6L24 2Q30 6 36 2L45 6 56 18 48 24 45 20V54H15V20L12 24 4 18Z"/><rect x="24" y="26" width="12" height="12" rx="1"/></svg>
+          </div>
+          <span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c3h"></h3><p data-i18n="c3p"></p>
+        </div>
+        <div class="cardx">
+          <div class="art packs" aria-hidden="true">
+            <div class="pk p1"><em>🌍</em><b data-i18n="pk1"></b><small data-i18n="pkWord"></small></div>
+            <div class="pk p2"><em>🌶️</em><b data-i18n="pk2"></b><small data-i18n="pkWord"></small></div>
+            <div class="pk p3"><em>⛺</em><b data-i18n="pk3"></b><small data-i18n="pkWord"></small></div>
+            <div class="pk p4"><em>🐻</em><b data-i18n="pk4"></b><small data-i18n="pkWord"></small></div>
+          </div>
+          <span class="tag" data-i18n="tagPlan"></span><h3 data-i18n="c4h"></h3><p data-i18n="c4p"></p>
+        </div>
       </div>
       <div class="wlbox">
         <h2 class="display" data-i18n="listH"></h2>
         <p class="sub" data-i18n="listP"></p>
+        <div class="coupon"><span class="sc" aria-hidden="true">✂</span><b data-i18n="coupon"></b><small data-i18n="couponS"></small></div>
         <form class="wl" data-source="club-page" novalidate>
           <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
           <p class="wlerr" hidden></p>

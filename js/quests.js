@@ -1,5 +1,5 @@
 /* ===== Quest decks. Each quest: [English, Español]. Edit freely.
-   "classic" is the general pack everyone gets. "devil" is Devil mode.
+   "classic" is the general party pack everyone gets. "devil" is Devil mode.
    Quests for one specific shirt go in js/shirts.js. ===== */
 const QUESTS = {
   classic: [
@@ -12,7 +12,16 @@ const QUESTS = {
     ['Ask someone for their email and write them a love poem together','Pedidle el email a alguien y escribidle juntos un poema de amor'],
     ['Find someone with more than 10k Instagram followers','Encontrad a alguien con más de 10k seguidores en Instagram'],
     ['Get a stranger to teach you both a dance move','Conseguid que un desconocido os enseñe un paso de baile'],
-    ['Start a conga line of at least 6 people','Montad una conga de al menos 6 personas']
+    ['Start a conga line of at least 6 people','Montad una conga de al menos 6 personas'],
+    ['Get a stranger to rate both your outfits out of 10','Que un desconocido puntúe vuestros outfits del 1 al 10'],
+    ['Ask a stranger which celebrity each of you looks like','Preguntadle a un desconocido a qué famoso se parece cada uno'],
+    ['Ask the bartender to invent a name for a drink inspired by you two','Pedidle al camarero que invente el nombre de una copa inspirada en vosotros dos'],
+    ['Sing a song with the wrong lyrics, loudly, until other people join in','Cantad una canción con la letra mal, bien alto, hasta que otros se unan'],
+    ['Tie your shoelaces together for one song and dance like that','Ataos los cordones juntos durante una canción y bailad así'],
+    ['Trade something from your pockets with a stranger, then trade that with someone else','Cambiad algo de vuestros bolsillos con un desconocido, y luego cambiad eso con otra persona'],
+    ['Collect high-fives from three different friend groups in under a minute','Conseguid choca-esos de tres grupos de amigos distintos en menos de un minuto'],
+    ['Recreate a famous album cover with two strangers and take a pic','Recread la portada de un disco famoso con dos desconocidos y haceos una foto'],
+    ['Give a stranger a 20-second pep talk they didn’t ask for','Dadle a un desconocido una charla motivacional de 20 segundos que no ha pedido']
   ],
   devil: [
     ['Ask the DJ for the most embarrassing song you can think of','Pedidle al DJ la canción más vergonzosa que se os ocurra'],
