@@ -402,3 +402,14 @@ body.hot .btn.red{color:#fff}
 .a-guy .ln{stroke-width:1.8}
 .a-guy .skin{stroke-width:2.4}
 .a-guy .stub{opacity:.16}
+/* Shirtless Pass guy: illustration + swinging pass on top */
+.art.pass .guy{position:relative;height:150px;aspect-ratio:454/600;flex:none;align-self:flex-end}
+.art.pass .guy img{display:block;height:100%;width:100%}
+.art.pass .guy svg.a-guy{position:absolute;inset:0;height:100%;width:100%}
+.a-guy .cord{fill:none;stroke:var(--red);stroke-width:14}
+.a-guy .badge{fill:#fff;stroke:var(--ink);stroke-width:9}
+.a-guy .bt{font:400 38px "Bagel Fat One",sans-serif;fill:var(--red);text-anchor:middle}
+.a-guy .lanyard{transform-origin:457px 430px}
+.a-guy .spark{stroke-width:5}
+.art.pass{align-items:flex-end}
+.art.pass .lb{align-self:center}
