@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SIDE QUEST CLUB — the shirt that starts side quests</title>
+<meta name="description" content="A shirt with a QR code on the back. People scan it, spin a side quest, and you do it together. Join the list for the first drop.">
+<meta name="theme-color" content="#fbf8ef">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark display" href="./">SQC</a>
+    <button class="lang" id="lang" aria-label="Language">ES</button>
+  </header>
+
+  <div class="hero">
+    <div class="kicker" data-i18n="kicker"></div>
+    <h1 class="display"><span>SIDE</span><span class="ink">QUEST</span><span>CLUB</span></h1>
+    <svg class="loop" viewBox="0 0 340 60" aria-hidden="true"><path d="M8 34C60 10 150 4 220 12c50 6 70 22 40 32-34 11-110 8-130-6-16-12 30-26 96-24 40 1 78 12 98 30m0 0-4-17m4 17-17-1"/></svg>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="stack">
+      <a class="btn red" href="#list" data-i18n="ctaList"></a>
+      <a class="btn" href="p/?s=demo" data-i18n="ctaTry"></a>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="display" data-i18n="howH"></h2>
+    <div class="steps">
+      <div class="step"><h3 data-i18n="s1h"></h3><p data-i18n="s1p"></p></div>
+      <div class="step"><h3 data-i18n="s2h"></h3><p data-i18n="s2p"></p></div>
+      <div class="step"><h3 data-i18n="s3h"></h3><p data-i18n="s3p"></p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display" data-i18n="questsH"></h2>
+    <p class="sub" data-i18n="questsP"></p>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section id="list">
+    <div class="wlbox">
+      <h2 class="display" data-i18n="listH"></h2>
+      <p class="sub" data-i18n="listP"></p>
+      <form class="wl" novalidate>
+        <input type="text" name="contact" autocomplete="email" autocapitalize="off" autocorrect="off" maxlength="80" aria-label="Email or Instagram">
+        <p class="wlerr" hidden></p>
+        <button class="btn red" type="submit"></button>
+      </form>
+      <p class="demo" hidden></p>
+    </div>
+  </section>
+
+  <footer>SIDE QUEST CLUB · Madrid · <span data-i18n="foot"></span></footer>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/quests.js"></script>
+<script>
+const T = {
+  en:{ kicker:'Coming soon · Madrid', lede:'The shirt that turns <b>strangers into side quests</b>.',
+    ctaList:'Get on the list', ctaTry:'Try a quest now 🎰',
+    howH:'How it works', s1h:'Wear the shirt', s1p:'There’s a big QR code on the back. That’s the whole trick.',
+    s2h:'Someone scans you', s2p:'No app, no login. Their phone spins a random side quest.',
+    s3h:'You do it together', s3p:'Right there, that night. Suddenly you know each other.',
+    questsH:'Quests like…', questsP:'A few of the ones waiting inside the spinner.',
+    listH:'Want one?', listP:'The first shirts are being made now. Leave your email or Instagram and you’ll hear first — with a launch discount.',
+    foot:'Go touch a stranger’s QR code.' },
+  es:{ kicker:'Muy pronto · Madrid', lede:'La camiseta que convierte a <b>desconocidos en side quests</b>.',
+    ctaList:'Apúntate a la lista', ctaTry:'Prueba una quest 🎰',
+    howH:'Cómo funciona', s1h:'Ponte la camiseta', s1p:'Lleva un QR enorme en la espalda. Ese es todo el truco.',
+    s2h:'Alguien te escanea', s2p:'Sin app y sin registro. Su móvil gira una side quest al azar.',
+    s3h:'La hacéis juntos', s3p:'Ahí mismo, esa noche. Y de repente ya os conocéis.',
+    questsH:'Quests como…', questsP:'Algunas de las que esperan dentro de la ruleta.',
+    listH:'¿Quieres una?', listP:'Las primeras camisetas se están haciendo ahora. Deja tu email o Instagram y te avisamos antes que a nadie — con descuento de lanzamiento.',
+    foot:'Sal y escanea a un desconocido.' }
+};
+function chips(){
+  const i = LANG === 'es' ? 1 : 0;
+  document.getElementById('chips').innerHTML = QUESTS.classic.slice(0,8).map(q => '<span class="chip">'+q[i]+'</span>').join('');
+}
+document.addEventListener('langchange', chips);
+initLang(T);
+initWaitlist('landing');
+</script>
+</body>
+</html>

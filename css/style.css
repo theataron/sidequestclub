@@ -1,0 +1,100 @@
+@font-face{font-family:"Bagel Fat One";src:url(../fonts/bagel-fat-one.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"DM Sans";src:url(../fonts/dm-sans.woff2) format("woff2");font-weight:100 1000;font-display:swap}
+:root{--bg:#fbf8ef;--ink:#1b1412;--red:#bd0a0a;--red-d:#8f0606;--blush:#f6ddd3;--mute:#6f625c;--card:#fffdf7;--sh:4px 4px 0 var(--ink)}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.5 "DM Sans",system-ui,-apple-system,Segoe UI,sans-serif;min-height:100dvh;overflow-x:hidden}
+[hidden]{display:none!important}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+.display{font-family:"Bagel Fat One","Arial Black",system-ui,sans-serif;font-weight:400;line-height:.95;letter-spacing:.01em}
+a{color:inherit}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.mark{font-size:1.15rem;color:var(--red);text-decoration:none;transform:rotate(-2deg);display:inline-block}
+.lang{font:700 .8rem "DM Sans",sans-serif;background:none;border:2px solid var(--ink);border-radius:99px;padding:6px 12px;color:var(--ink);cursor:pointer}
+
+/* buttons */
+.btn{display:block;width:100%;font:700 1.05rem "DM Sans",sans-serif;padding:16px 20px;border-radius:99px;border:2.5px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:var(--sh);cursor:pointer;text-align:center;text-decoration:none;transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn.red{background:var(--red);color:#fff}
+.btn.big{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:1.9rem;letter-spacing:.04em;padding:18px}
+.btn.plain{border:0;box-shadow:none;background:none;text-decoration:underline;font-weight:500;color:var(--mute);padding:10px}
+.btn:disabled{opacity:.6}
+.stack{display:grid;gap:14px}
+
+/* hero */
+.hero{padding:28px 0 36px;text-align:center;position:relative}
+.kicker{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.hero h1{font-size:clamp(3.4rem,17vw,5.6rem);color:var(--red);margin:14px 0 6px;transform:rotate(-3deg)}
+.hero h1 span{display:block}
+.hero h1 .ink{color:var(--ink)}
+.loop{display:block;width:78%;max-width:340px;margin:-6px auto 10px}
+.loop path{fill:none;stroke:var(--red);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.lede{font-size:1.2rem;max-width:26ch;margin:0 auto 26px}
+.lede b{background:linear-gradient(transparent 62%,var(--blush) 62%)}
+
+section{padding:34px 0}
+h2.display{font-size:2.2rem;margin-bottom:18px}
+.sub{color:var(--mute);margin-bottom:18px}
+
+/* steps */
+.steps{display:grid;gap:16px;counter-reset:s}
+.step{background:var(--card);border:2.5px solid var(--ink);border-radius:20px;padding:18px 18px 18px 74px;position:relative;box-shadow:var(--sh)}
+.step:nth-child(2){transform:rotate(.8deg)}.step:nth-child(3){transform:rotate(-.6deg)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font:400 1.5rem/44px "Bagel Fat One",sans-serif;text-align:center}
+.step h3{font-size:1.1rem;margin-bottom:2px}
+.step p{color:var(--mute);font-size:.97rem}
+
+/* quest chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:2px solid var(--ink);border-radius:14px;padding:9px 13px;font-size:.95rem;background:var(--card)}
+.chip:nth-child(3n){background:var(--blush)}
+.chip:nth-child(4n+1){transform:rotate(-1.2deg)}.chip:nth-child(5n+2){transform:rotate(1deg)}
+
+/* waitlist */
+.wlbox{background:var(--ink);color:var(--bg);border-radius:26px;padding:26px 22px}
+.wlbox h2{color:#fff}
+.wlbox .sub{color:#d9cdc6}
+.wl{display:grid;gap:12px}
+.wl input{font:500 1.05rem "DM Sans",sans-serif;padding:15px 18px;border-radius:99px;border:2.5px solid var(--bg);background:transparent;color:#fff;width:100%}
+.wl input::placeholder{color:#a89a93}
+.wl .btn{border-color:var(--bg);box-shadow:4px 4px 0 var(--red-d)}
+.wlmsg{font-weight:700;font-size:1.1rem;padding:8px 0}
+.wlerr{color:#ffb4a8;font-size:.9rem}
+.demo{font-size:.75rem;color:#a89a93;margin-top:10px}
+.light.wlbox{background:var(--card);color:var(--ink);border:2.5px solid var(--ink);box-shadow:var(--sh)}
+.light.wlbox h2{color:var(--red)}.light.wlbox .sub{color:var(--mute)}
+.light .wl input{border-color:var(--ink);color:var(--ink)}
+.light .wl .btn{border-color:var(--ink);box-shadow:var(--sh)}
+.light .wlerr{color:var(--red)}.light .demo{color:var(--mute)}
+
+footer{padding:30px 0 44px;text-align:center;color:var(--mute);font-size:.85rem}
+
+/* ===== play page ===== */
+.play{padding:6px 0 40px;text-align:center}
+.play h1{font-size:clamp(2.3rem,11vw,3.2rem);color:var(--red);margin:8px 0 10px;transform:rotate(-2deg)}
+.play .sub{max-width:30ch;margin-left:auto;margin-right:auto}
+.machine{background:var(--card);border:3px solid var(--ink);border-radius:26px;box-shadow:6px 6px 0 var(--ink);padding:14px;margin:20px 0 22px}
+.machine .lbl{font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.window{border:2.5px solid var(--ink);border-radius:16px;background:var(--bg);min-height:150px;display:grid;place-items:center;padding:18px;overflow:hidden}
+.reel{font-size:1.35rem;font-weight:700;line-height:1.25}
+.reel.q{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:3rem;color:var(--red);letter-spacing:.1em}
+.reel.tick{animation:tick .09s ease-out}
+.reel.land{animation:land .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes tick{from{transform:translateY(-60%);opacity:.2;filter:blur(3px)}to{transform:none;opacity:1;filter:none}}
+@keyframes land{from{transform:scale(.8) rotate(-3deg)}to{transform:none}}
+.devil{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 18px;font-weight:700;font-size:.95rem;cursor:pointer;user-select:none}
+.devil input{appearance:none;width:46px;height:26px;border-radius:99px;border:2.5px solid var(--ink);background:var(--card);position:relative;cursor:pointer;margin:0}
+.devil input::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:var(--ink);transition:transform .15s}
+.devil input:checked{background:var(--red)}
+.devil input:checked::after{transform:translateX(20px);background:#fff}
+body.hot{--bg:#1b1412;--ink:#fbf8ef;--card:#2a1d1a;--mute:#c9b9b1;--blush:#5a1410}
+body.hot .btn.red{color:#fff}
+.ticket{background:var(--red);color:#fff;border:3px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 var(--ink);padding:26px 20px;margin:18px 0;transform:rotate(-1.5deg)}
+.ticket small{display:block;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;opacity:.85;margin-bottom:10px}
+.ticket div{font-size:1.5rem;font-weight:700;line-height:1.2}
+.note{margin:0 auto 20px;max-width:30ch}
+.trophy{font-size:4rem;line-height:1;margin-top:10px}
+.shirtid{font-size:.75rem;color:var(--mute);margin-top:26px}
+@media (prefers-reduced-motion:reduce){.reel.tick,.reel.land{animation:none}}
