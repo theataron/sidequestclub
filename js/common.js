@@ -2,7 +2,7 @@
    API_URL: paste the Google Apps Script web-app link (ending in /exec) between the quotes.
    While it is empty the site runs in DEMO MODE: email sign-ups are NOT collected,
    and wall messages only live on the visitor's own phone. See backend/SETUP.md. */
-const SQC = { API_URL: '' };
+const SQC = { API_URL: 'https://script.google.com/macros/s/AKfycbzJsL0f9hHVi1GYV_vMrzFgDBMkWBeLgugA8oV-zaMIh1sDrTbZ3LN595ZrwVy5eLAt/exec' };
 
 const store = {
   get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
