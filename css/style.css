@@ -325,3 +325,39 @@ body.hot .btn.red{color:#fff}
 .pk{width:64px;height:92px;transform-origin:50% 300%}
 .pk b{font-size:.8rem}.pk em{font-size:1.25rem}.pk small{font-size:.58rem}
 .p1{--r:-24deg}.p2{--r:-8deg}.p3{--r:8deg}.p4{--r:24deg}
+
+/* ===== v6 ===== */
+/* continuous lines on menu, language and white buttons; dashed things never get a shadow */
+.lang,.burger{border-style:solid}
+.btn:not(.red):not(.plain){border-style:solid}
+.btn.red{outline:none}
+.btn.red.ring{outline:2px dashed var(--red);outline-offset:4px}
+.step,.chip,.cardx{box-shadow:none}
+.light.wlbox{box-shadow:none}
+.ticket{box-shadow:none}
+.machine .window{border-style:solid}
+/* map */
+.map .trailpath{fill:none;stroke:none}
+.map .halo{fill:none;stroke:var(--bg);stroke-width:9}
+.map .road{opacity:.9}
+.map .ghost{display:none}
+.map .goal{transform-box:fill-box;transform-origin:center;will-change:transform}
+.map .goal.on{animation:starpop .45s cubic-bezier(.2,1.8,.4,1) both}
+@keyframes starpop{from{transform:scale(.5)}to{transform:scale(1)}}
+.map .goal.on .rays{animation:rays 1.4s ease-in-out .45s infinite}
+.machine.won{animation:glow 1.6s ease-in-out .3s 2}
+/* squad QR */
+.art.squad .mq .b{fill:#fff;stroke:var(--ink);stroke-width:1.2}
+.art.squad .mq .d{fill:var(--ink);stroke:none}
+/* the new guy */
+.a-guy .skin{fill:#d9a27c;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.a-guy .shade{fill:#bf8560;stroke:none}
+.a-guy .stub{fill:#6b4a36;opacity:.22}
+.a-guy .ln{fill:none;stroke:#7a4a2e;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.a-guy .hair{fill:#2a1a12;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.a-guy .brow{fill:none;stroke:#2a1a12;stroke-width:2.2;stroke-linecap:round}
+.a-guy .eye{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.a-guy .smile{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
+.a-guy .lanyard{transform-origin:75px 54px}
+.igline{margin-top:10px;font-weight:700}
+.igline a{color:var(--redt)}

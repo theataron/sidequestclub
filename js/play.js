@@ -1,4 +1,4 @@
-/* ===== SIDE QUEST CLUB — the page a shirt's QR code opens ===== */
+/* ===== SIDE QUEST CLUB - the page a shirt's QR code opens ===== */
 const VIEWS = ['lang','quote','spin','accept','done'];
 const owner = SHIRTS[SHIRT.toLowerCase()] || null;
 const demo = !SHIRT || SHIRT === 'demo';
@@ -53,7 +53,11 @@ const pins = STOPS.map(f => {
 function mapTo(f){
   const p = trail.getPointAtLength(f * LEN);
   runner.setAttribute('cx', p.x); runner.setAttribute('cy', p.y);
-  walked.style.strokeDasharray = (f * LEN) + ' ' + LEN;
+  /* red only from where the route leaves the usual night */
+  const from = BRANCH * LEN, to = Math.max(from, f * LEN);
+  walked.style.strokeDasharray = (to - from) + ' ' + (LEN * 2);
+  walked.style.strokeDashoffset = -from;
+  walked.style.opacity = to - from < 1 ? 0 : 1;
 }
 function mapReset(){ pins.forEach(p => p.classList.remove('on')); goal.classList.remove('on'); $('map').classList.remove('off'); $('machine').classList.remove('won'); runner.style.display = ''; mapTo(0); }
 

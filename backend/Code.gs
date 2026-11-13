@@ -1,5 +1,5 @@
 /**
- * SIDE QUEST CLUB — backend (Google Apps Script, attached to a Google Sheet).
+ * SIDE QUEST CLUB - backend (Google Apps Script, attached to a Google Sheet).
  * Saves email sign-ups, wall messages and scan/quest events into three tabs:
  * "Waitlist", "Wall" and "Events". The tabs are created automatically.
  * To hide a wall message: type anything into its "hidden" column.

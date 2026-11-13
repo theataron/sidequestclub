@@ -12,4 +12,4 @@ Until this is done the site runs in demo mode: emails are not saved and wall mes
 6. Open `js/common.js` and paste the URL between the quotes after `API_URL:`.
 7. Publish the change. The "Demo mode" notes on the site disappear.
 
-The Sheet then fills three tabs: Waitlist (emails), Wall (messages — type anything in the "hidden" column to remove one from the site) and Events (scans, spins, accepted and completed quests per shirt).
+The Sheet then fills three tabs: Waitlist (emails), Wall (messages - type anything in the "hidden" column to remove one from the site) and Events (scans, spins, accepted and completed quests per shirt).

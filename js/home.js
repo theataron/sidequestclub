@@ -1,4 +1,4 @@
-/* ===== SIDE QUEST CLUB — home page (home, wall, about, club) ===== */
+/* ===== SIDE QUEST CLUB - home page (home, wall, about, club) ===== */
 const VIEWS = ['home','wall','about','club'];
 function show(v){
   if (!VIEWS.includes(v)) v = 'home';

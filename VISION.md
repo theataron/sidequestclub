@@ -1,6 +1,6 @@
-# SIDE QUEST CLUB — Vision & Mission
+# SIDE QUEST CLUB - Vision & Mission
 
-> Every stranger is a side quest you haven't started.
+> Every stranger is a side quest you haven't started yet.
 
 ## Vision
 A world where meeting someone new only takes one small push.

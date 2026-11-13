@@ -27,7 +27,7 @@ const QUESTS = {
     ['Ask the DJ for the most embarrassing song you can think of','Pedidle al DJ la canción más vergonzosa que se os ocurra'],
     ['Serenade a stranger together. Full commitment.','Dadle una serenata a un desconocido. Con todo.'],
     ['Swap shirts or jackets for one song','Intercambiad camiseta o chaqueta durante una canción'],
-    ['Get a stranger to rate your dance moves out of 10 — loser buys the water','Que un desconocido puntúe vuestro baile del 1 al 10 — quien pierda invita al agua'],
+    ['Get a stranger to rate your dance moves out of 10 - loser buys the water','Que un desconocido puntúe vuestro baile del 1 al 10 - quien pierda invita al agua'],
     ['Start a slow clap and get at least ten people to join','Empezad un aplauso lento y conseguid que se unan al menos diez personas'],
     ['Walk up to a group and introduce each other with a completely made-up life story','Acercaos a un grupo y presentaos el uno al otro con una vida totalmente inventada']
   ]

@@ -1,4 +1,4 @@
-/* ===== SIDE QUEST CLUB — settings & helpers =====
+/* ===== SIDE QUEST CLUB - settings & helpers =====
    API_URL: paste the Google Apps Script web-app link (ending in /exec) between the quotes.
    While it is empty the site runs in DEMO MODE: email sign-ups are NOT collected,
    and wall messages only live on the visitor's own phone. See backend/SETUP.md. */
@@ -52,8 +52,8 @@ function track(type, extra){ if (SQC.API_URL) api('logEvent', Object.assign({ ty
 
 /* ----- email sign-up forms (any <form class="wl">) ----- */
 const WL_TEXT = {
-  en:{ ph:'Your email', send:'Get my launch discount 🎟️', sending:'Sending…', ok:'You’re in Side Quest Club 🎉 Your launch discount is saved — we’ll email you when the shirts drop.', bad:'That email doesn’t look right.', err:'Couldn’t connect. Try again.', demo:'Demo mode — sign-ups are not being saved yet.' },
-  es:{ ph:'Tu email', send:'Quiero mi descuento 🎟️', sending:'Enviando…', ok:'Ya estás en Side Quest Club 🎉 Tu descuento está guardado — te escribimos cuando salgan las camisetas.', bad:'Ese email no parece correcto.', err:'No se pudo conectar. Inténtalo otra vez.', demo:'Modo demo — todavía no se guardan los registros.' }
+  en:{ ph:'Your email', send:'Get my launch discount 🎟️', sending:'Sending…', ok:'You’re in Side Quest Club 🎉 Your launch discount is saved - we’ll email you when the shirts drop.', bad:'That email doesn’t look right.', err:'Couldn’t connect. Try again.', demo:'Demo mode - sign-ups are not being saved yet.' },
+  es:{ ph:'Tu email', send:'Quiero mi descuento 🎟️', sending:'Enviando…', ok:'Ya estás en Side Quest Club 🎉 Tu descuento está guardado - te escribimos cuando salgan las camisetas.', bad:'Ese email no parece correcto.', err:'No se pudo conectar. Inténtalo otra vez.', demo:'Modo demo - todavía no se guardan los registros.' }
 };
 function initWaitlist(){
   document.querySelectorAll('form.wl').forEach(form => {
