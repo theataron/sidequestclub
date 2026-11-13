@@ -20,6 +20,7 @@ $('burger').onclick = () => { $('menu').hidden = false; };
 $('menuClose').onclick = () => { $('menu').hidden = true; };
 $('mSpinLink').onclick = e => { e.preventDefault(); $('menu').hidden = true; };
 document.querySelectorAll('[data-to]').forEach(a => { a.href = '../' + (SHIRT ? '?s=' + SHIRT : '') + '#' + a.dataset.to; });
+$('homeLogo').href = '../' + (SHIRT ? '?s=' + SHIRT : '');
 
 /* ----- language choice, then the quote ----- */
 LANGS.forEach(l => {
@@ -37,7 +38,7 @@ $('v-quote').onclick = endQuote;
 /* ----- the quest map ----- */
 const trail = $('trail'), walked = $('walked'), runner = $('runner'), goal = $('goal');
 const LEN = trail.getTotalLength();
-const BRANCH = 88 / LEN;                       /* where the route leaves the usual road */
+const BRANCH = 80 / LEN;                       /* where the route leaves the usual road */
 /* side quests sit at each peak and dip, above and below the usual road; the last one (the star) is yours */
 const STOPS = [[140,28],[180,96],[220,28],[260,96]].map(([x,y]) => {
   let best = 0, bd = 1e9;

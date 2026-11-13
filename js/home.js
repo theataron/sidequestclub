@@ -7,7 +7,11 @@ function show(v){
   if (v === 'wall') loadWall();
   window.scrollTo(0,0);
 }
-window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+window.addEventListener('hashchange', () => {
+  const v = location.hash.slice(1);
+  if (v === 'join'){ show('home'); requestAnimationFrame(() => $('join').scrollIntoView({ behavior:'smooth' })); return; }
+  show(v);
+});
 $('burger').onclick = () => { $('menu').hidden = false; };
 $('menuClose').onclick = () => { $('menu').hidden = true; };
 document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { $('menu').hidden = true; }));
@@ -54,4 +58,4 @@ $('wallForm').addEventListener('submit', async e => {
 document.addEventListener('langchange', () => { chips(); paintWall(); });
 initLang(T);
 initWaitlist();
-show(location.hash.slice(1));
+if (location.hash === '#join'){ show('home'); setTimeout(() => $('join').scrollIntoView(), 50); } else show(location.hash.slice(1));

@@ -401,3 +401,39 @@ body.hot .btn.red{color:#fff}
   6%{opacity:1;transform:rotate(0)}
   7.5%,100%{opacity:0;transform:translateY(6px)}}
 @media (prefers-reduced-motion:reduce){.peek{animation:none;opacity:1}}
+
+/* ===== background routes ===== */
+.bgmap{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.13}
+.bgmap path{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:2 9;stroke-linecap:round;animation:wander 26s linear infinite}
+.bgmap path.r{stroke:var(--red);animation-duration:34s;animation-direction:reverse}
+.bgmap .x{stroke:var(--red);stroke-width:3;stroke-dasharray:none;animation:none}
+@keyframes wander{to{stroke-dashoffset:-220}}
+.wrap{position:relative;z-index:1}
+.quote~*,#v-quote{position:relative}
+@media (prefers-reduced-motion:reduce){.bgmap path{animation:none}}
+
+/* ===== home ===== */
+.hsub{max-width:32ch;margin:0 auto 6px;color:var(--mute)}
+.heroart{display:flex;justify-content:center;margin:4px 0 14px}
+.heroart svg{width:100%;max-width:330px;height:auto}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--card);border:2.5px solid var(--ink);border-radius:18px;padding:14px;box-shadow:var(--sh);display:grid;gap:4px}
+.tile em{font-style:normal;font-size:1.7rem;line-height:1}
+.tile b{font-size:1rem;line-height:1.2}
+.tile span{font-size:.88rem;color:var(--mute);line-height:1.35}
+.tile:nth-child(2){transform:rotate(.8deg)}.tile:nth-child(3){transform:rotate(-.8deg)}
+.gets{display:grid;gap:10px;margin-bottom:6px}
+.gets div{display:grid;gap:2px;padding:12px 14px 12px 44px;position:relative;background:var(--card);border:2.5px solid var(--ink);border-radius:16px}
+.gets div::before{content:"★";position:absolute;left:14px;top:11px;color:var(--red);font-size:1.15rem}
+.gets div:last-child{background:var(--blush)}
+.gets b{font-size:1rem}.gets span{color:var(--mute);font-size:.93rem}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:700;padding:14px 26px 14px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:9px;font:400 1.5rem "Bagel Fat One",sans-serif;color:var(--redt)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--mute);padding:0 0 14px;margin:0}
+.light-q{color:#ffb4a8;margin-bottom:4px}
+.footlinks{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;padding:10px 0 0;font-weight:700}
+.footlinks a{color:var(--ink)}

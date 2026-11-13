@@ -37,12 +37,24 @@
         <h1 class="display"><span>SIDE</span><span class="ink">QUEST</span><span>CLUB</span></h1>
         <svg class="loop" viewBox="0 0 340 60" aria-hidden="true"><path d="M8 34C60 10 150 4 220 12c50 6 70 22 40 32-34 11-110 8-130-6-16-12 30-26 96-24 40 1 78 12 98 30m0 0-4-17m4 17-17-1"/></svg>
         <p class="lede" data-i18n="hLede"></p>
+        <p class="hsub" data-i18n="hSub"></p>
+        <div class="heroart" aria-hidden="true"><svg viewBox="0 0 300 140" class="a-shirt">
+          <path class="tee" d="M70 30L95 18Q110 28 125 18L150 30 170 55 152 66 146 58V128H74V58L68 66 50 55Z"/>
+          <g class="qr"><rect x="92" y="62" width="36" height="36" rx="2" class="qbg"/>
+            <path d="M95 65h9v9h-9zM116 65h9v9h-9zM95 86h9v9h-9z" class="qd"/>
+            <path d="M107 66h3v3h-3zM107 72h6v3h-6zM98 77h3v6h-3zM104 78h6v3h-6zM113 77h3v3h-3zM119 78h6v3h-6zM110 84h3v6h-3zM116 86h3v3h-3zM122 85h3v9h-3zM107 91h3v4h-3zM116 92h4v3h-4z" class="qd"/></g>
+          <rect class="beam" x="88" y="60" width="44" height="3" rx="1.5"/>
+          <g class="phone"><rect x="205" y="34" width="56" height="98" rx="10"/><rect x="211" y="46" width="44" height="74" rx="4" class="scr"/>
+            <path class="pstar" d="M233 66l3.6 7.3 8 1.2-5.8 5.6 1.4 8-7.2-3.8-7.2 3.8 1.4-8-5.8-5.6 8-1.2z"/>
+            <rect class="pl" x="218" y="96" width="30" height="4" rx="2"/><rect class="pl" x="222" y="104" width="22" height="4" rx="2"/></g>
+        </svg></div>
         <p class="ctaq" data-i18n="ctaQ"></p>
         <div class="stack">
-          <a class="btn red ring" href="#club" data-i18n="ctaList"></a>
+          <a class="btn red" href="#join" data-i18n="ctaList"></a>
           <a class="btn" href="p/?s=demo" data-i18n="ctaTry"></a>
         </div>
       </div>
+
       <section>
         <h2 class="display" data-i18n="howH"></h2>
         <div class="steps">
@@ -51,21 +63,53 @@
           <div class="step"><h3 data-i18n="s3h"></h3><p data-i18n="s3p"></p></div>
         </div>
       </section>
+
+      <section>
+        <h2 class="display" data-i18n="forH"></h2>
+        <div class="tiles">
+          <div class="tile"><em>🪩</em><b data-i18n="f1h"></b><span data-i18n="f1p"></span></div>
+          <div class="tile"><em>🌍</em><b data-i18n="f2h"></b><span data-i18n="f2p"></span></div>
+          <div class="tile"><em>🎪</em><b data-i18n="f3h"></b><span data-i18n="f3p"></span></div>
+          <div class="tile"><em>🎂</em><b data-i18n="f4h"></b><span data-i18n="f4p"></span></div>
+        </div>
+      </section>
+
       <section>
         <h2 class="display" data-i18n="questsH"></h2>
         <p class="sub" data-i18n="questsP"></p>
         <div class="chips" id="chips"></div>
+        <a class="btn" href="p/?s=demo" data-i18n="ctaTry" style="margin-top:18px"></a>
       </section>
-      <section class="stack">
-        <a class="btn" href="#about" data-i18n="hAbout"></a>
-        <a class="btn" href="#wall" data-i18n="hWall"></a>
-      </section>
+
       <section>
+        <h2 class="display" data-i18n="getH"></h2>
+        <div class="gets">
+          <div><b data-i18n="g1h"></b><span data-i18n="g1p"></span></div>
+          <div><b data-i18n="g2h"></b><span data-i18n="g2p"></span></div>
+          <div><b data-i18n="g3h"></b><span data-i18n="g3p"></span></div>
+          <div><b data-i18n="g4h"></b><span data-i18n="g4p"></span></div>
+        </div>
+        <a class="more" href="#club" data-i18n="seePlan"></a>
+      </section>
+
+      <section>
+        <h2 class="display" data-i18n="faqH"></h2>
+        <div class="faq">
+          <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+          <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+          <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+          <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+          <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+        </div>
+      </section>
+
+      <section id="join">
         <div class="wlbox">
+          <p class="ctaq light-q" data-i18n="ctaQ"></p>
           <h2 class="display" data-i18n="listH"></h2>
           <p class="sub" data-i18n="listP"></p>
           <div class="coupon"><span class="sc" aria-hidden="true">✂</span><b data-i18n="coupon"></b><small data-i18n="couponS"></small></div>
-        <form class="wl" data-source="home" novalidate>
+          <form class="wl" data-source="home" novalidate>
             <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" maxlength="120" aria-label="Email">
             <p class="wlerr" hidden></p>
             <button class="btn red" type="submit"></button>
@@ -73,6 +117,8 @@
           <p class="demo" hidden></p>
         </div>
       </section>
+
+      <nav class="footlinks"><a href="#about" data-i18n="mAbout"></a><a href="#wall" data-i18n="mWall"></a><a href="#club" data-i18n="fComing"></a></nav>
     </section>
 
     <!-- ===== WALL ===== -->

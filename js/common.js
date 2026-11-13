@@ -74,3 +74,17 @@ function initWaitlist(){
     });
   });
 }
+
+/* ----- faint side-quest routes in the background of every page ----- */
+(function(){
+  const NS = 'http://www.w3.org/2000/svg', svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('class', 'bgmap'); svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('viewBox', '0 0 390 844'); svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+  svg.innerHTML =
+    '<path d="M-20 90C60 40 110 150 190 110S310 30 410 80"/>' +
+    '<path class="r" d="M410 300C330 340 310 250 240 290S110 380 40 330-20 350-20 350"/>' +
+    '<path d="M-20 560C50 500 120 620 200 570S320 480 410 540"/>' +
+    '<path class="r" d="M60 870C90 800 170 830 200 760S290 720 330 780 400 820 410 800"/>' +
+    '<path class="x" d="M182 102l12 12m0-12-12 12M316 772l12 12m0-12-12 12"/>';
+  document.body.prepend(svg);
+})();

@@ -12,7 +12,7 @@
 <body>
 <div class="wrap">
   <header class="top" id="top" hidden>
-    <span class="mark display">SIDE QUEST CLUB</span>
+    <a class="mark display" href="../" id="homeLogo">SIDE QUEST CLUB</a>
     <div class="right">
       <button class="lang" id="lang" aria-label="Language">ES</button>
       <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i><span class="peek" aria-hidden="true">👀</span></button>
@@ -21,6 +21,7 @@
 
   <nav class="menu" id="menu" hidden>
     <button class="x" id="menuClose" aria-label="Close">✕</button>
+    <a data-to="home"><span data-i18n="mHome"></span><small data-i18n="mHomeS"></small></a>
     <a href="#" id="mSpinLink"><span data-i18n="mSpin"></span><small data-i18n="mSpinS"></small></a>
     <a data-to="wall"><span data-i18n="mWall"></span><small data-i18n="mWallS"></small></a>
     <a data-to="about"><span data-i18n="mAbout"></span><small data-i18n="mAboutS"></small></a>
@@ -67,10 +68,10 @@
         <svg class="map" id="map" viewBox="0 0 320 124" aria-hidden="true">
           <text class="lbl-usual" id="lblUsual" x="16" y="80"></text>
           <text class="lbl-side" id="lblSide" x="16" y="46"></text>
-          <path class="trailpath" id="trail" d="M16 62H104C118 62 126 28 140 28S166 96 180 96 206 28 220 28 246 96 260 96 284 30 296 30"/>
+          <path class="trailpath" id="trail" d="M16 62H96C99.7 61.7 105.2 63 108 60C110.8 57 110.3 48.8 113 44C115.7 39.2 119.5 33.7 124 31C128.5 28.3 134.7 28.2 140 28C145.3 27.8 152.2 27 156 30C159.8 33 163.3 41.3 163 46C162.7 50.7 157 57 154 58C151 59 145.3 54.7 145 52C144.7 49.3 148.7 42 152 42C155.3 42 162 47 165 52C168 57 168.8 66 170 72C171.2 78 170.3 84 172 88C173.7 92 176.3 94 180 96C183.7 98 190.2 101.7 194 100C197.8 98.3 202.5 91.3 203 86C203.5 80.7 196.5 74 197 68C197.5 62 202.2 56.7 206 50C209.8 43.3 215.7 33 220 28C224.3 23 228.3 19.3 232 20C235.7 20.7 241.5 27 242 32C242.5 37 234 44.7 235 50C236 55.3 246.5 58.7 248 64C249.5 69.3 242 76.7 244 82C246 87.3 255 93 260 96C265 99 270.2 101.7 274 100C277.8 98.3 282.7 91.3 283 86C283.3 80.7 275 73 276 68C277 63 287.8 60.3 289 56C290.2 51.7 281.8 46.3 283 42C284.2 37.7 293.8 32 296 30"/>
           <path class="road" d="M16 62H304"/>
-          <path class="walked" id="walked" d="M16 62H104C118 62 126 28 140 28S166 96 180 96 206 28 220 28 246 96 260 96 284 30 296 30"/>
-          <path class="walked" id="walkedStraight" d="M16 62H104"/>
+          <path class="walked" id="walked" d="M16 62H96C99.7 61.7 105.2 63 108 60C110.8 57 110.3 48.8 113 44C115.7 39.2 119.5 33.7 124 31C128.5 28.3 134.7 28.2 140 28C145.3 27.8 152.2 27 156 30C159.8 33 163.3 41.3 163 46C162.7 50.7 157 57 154 58C151 59 145.3 54.7 145 52C144.7 49.3 148.7 42 152 42C155.3 42 162 47 165 52C168 57 168.8 66 170 72C171.2 78 170.3 84 172 88C173.7 92 176.3 94 180 96C183.7 98 190.2 101.7 194 100C197.8 98.3 202.5 91.3 203 86C203.5 80.7 196.5 74 197 68C197.5 62 202.2 56.7 206 50C209.8 43.3 215.7 33 220 28C224.3 23 228.3 19.3 232 20C235.7 20.7 241.5 27 242 32C242.5 37 234 44.7 235 50C236 55.3 246.5 58.7 248 64C249.5 69.3 242 76.7 244 82C246 87.3 255 93 260 96C265 99 270.2 101.7 274 100C277.8 98.3 282.7 91.3 283 86C283.3 80.7 275 73 276 68C277 63 287.8 60.3 289 56C290.2 51.7 281.8 46.3 283 42C284.2 37.7 293.8 32 296 30"/>
+          <path class="walked" id="walkedStraight" d="M16 62H96"/>
           <g id="pins"></g>
           <g transform="translate(296 30)"><g class="goal" id="goal">
             <path class="rays" d="M0-24v6M17-17l-4 4M-17-17l4 4M25 0h-6M-25 0h6"/>
