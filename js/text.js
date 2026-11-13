@@ -65,7 +65,7 @@ const T = {
     "c1h": "Your own shirt",
     "c1p": "A proper streetwear tee with your personal QR on the back. People scan you; you pick which quests they get, and add your own.",
     "c2h": "Shirtless Pass",
-    "c2p": "No shirt? Get the pass. You and your friends each get side quests for the night - then it’s on you to walk up to strangers and do them. At the end of the night, compare who did the most.",
+    "c2p": "It means you don’t need to buy a shirt to play: just get a day pass on your phone, for a lower price. You and your friends each get side quests for the night - then it’s on you to walk up to strangers and do them. At the end of the night, compare who did the most.",
     "c3h": "Squad packs",
     "c3p": "Shirts for the whole group - festivals, trips, birthdays - with a shared scoreboard for the night.",
     "c4h": "Quest packs",
@@ -116,7 +116,7 @@ const T = {
     "wallReport": "report",
     "wallReported": "Reported. Thanks.",
     "abIg": "Say hi on Instagram:",
-    "c2t": "No club shirt needed. Keeping yours on is allowed 😉"
+    "c2t": "No, not that kind of shirtless!"
   },
   "es": {
     "mWall": "El Muro 🧱",
@@ -181,7 +181,7 @@ const T = {
     "c1h": "Tu propia camiseta",
     "c1p": "Una camiseta streetwear de verdad con tu QR personal en la espalda. Te escanean; tú eliges qué quests les tocan y añades las tuyas.",
     "c2h": "Shirtless Pass",
-    "c2p": "¿Sin camiseta? Consigue el pass. Tú y tus amigos recibís side quests para la noche - y os toca a vosotros acercaros a desconocidos para hacerlas. Al final de la noche, comparad quién ha hecho más.",
+    "c2p": "Significa que no necesitas comprar una camiseta para jugar: consigue un pase de un día en tu móvil, más barato. Tú y tus amigos recibís side quests para la noche - y os toca a vosotros acercaros a desconocidos para hacerlas. Al final de la noche, comparad quién ha hecho más.",
     "c3h": "Packs para grupos",
     "c3p": "Camisetas para todo el grupo - festivales, viajes, cumpleaños - con un marcador compartido para la noche.",
     "c4h": "Packs de quests",
@@ -232,6 +232,6 @@ const T = {
     "wallReport": "denunciar",
     "wallReported": "Denunciado. Gracias.",
     "abIg": "Escríbeme por Instagram:",
-    "c2t": "Sin camiseta del club. Puedes dejarte la tuya puesta 😉"
+    "c2t": "¡No, no ese tipo de shirtless!"
   }
 };

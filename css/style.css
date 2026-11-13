@@ -162,7 +162,6 @@ body.hot .btn.red{color:#fff}
 .map .lbl-side{font:400 13px "Bagel Fat One",sans-serif;fill:var(--redt);opacity:0;transition:opacity .4s}
 .map.off .road,.map.off .lbl-usual{opacity:.28}
 .map.off .lbl-side{opacity:1}
-.map .ghost{fill:none;stroke:var(--redt);stroke-width:2.5;stroke-dasharray:1 8;stroke-linecap:round;opacity:.35}
 .map .walked{fill:none;stroke:var(--red);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
 .map .pin circle{fill:var(--card);stroke:var(--ink);stroke-width:2.5;transition:fill .15s}
 .map .pin text{font:700 11px "DM Sans",sans-serif;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
@@ -210,16 +209,7 @@ body.hot .btn.red{color:#fff}
 .wallbg .msg small{font-family:"DM Sans",sans-serif;color:#6f625c;font-size:.7rem;text-shadow:none;margin-top:2px}
 .wallbg .empty{font-family:"Permanent Marker",cursive;color:#8d8780;font-size:1.3rem}
 
-/* ===== v5: dashed accents, launch discount, map, coming-soon animations ===== */
-:root{--dash:2.5px dashed var(--ink)}
-.btn:not(.red):not(.plain){border-style:dashed}
-.btn.red{outline:2px dashed var(--red);outline-offset:4px}
-.btn.red:active{outline-offset:2px}
-.step,.chip,.cardx{border-style:dashed}
-.lang,.burger{border-style:dashed}
-.ticket{outline:2.5px dashed rgba(255,255,255,.75);outline-offset:-12px}
-.wlbox{outline:2.5px dashed var(--red);outline-offset:7px}
-.machine .window{border-style:dashed}
+/* ===== launch discount, map, coming-soon animations ===== */
 .ctaq{font-weight:700;margin:0 0 10px}
 
 /* launch-discount coupon */
@@ -254,7 +244,7 @@ body.hot .btn.red{color:#fff}
 .wallbg .msg.gone{font:500 .85rem "DM Sans",sans-serif;color:#6f625c;text-shadow:none}
 
 /* ===== coming-soon card art ===== */
-.cardx .art{height:150px;margin:-4px -6px 12px;border-radius:14px;background:var(--bg);border:2px dashed var(--ink);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.cardx .art{height:150px;margin:-4px -6px 12px;border-radius:14px;background:var(--bg);border:0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
 .cardx .art svg{height:100%;width:auto}
 /* shirt + scan */
 .a-shirt .tee{fill:var(--red);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
@@ -308,7 +298,6 @@ body.hot .btn.red{color:#fff}
 .pk em{font-style:normal;font-size:1.6rem}
 .pk b{font:400 1.05rem "Bagel Fat One",sans-serif}
 .pk small{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.pk::before{content:"";position:absolute;inset:5px;border:1.5px dashed currentColor;border-radius:8px;opacity:.5}
 .p1{background:#2a5bd7;color:#fff;--r:-24deg;--x:-66px}
 .p2{background:var(--red);color:#fff;--r:-8deg;--x:-22px}
 .p3{background:#ffc531;color:var(--ink);--r:8deg;--x:22px}
@@ -327,20 +316,11 @@ body.hot .btn.red{color:#fff}
 .p1{--r:-24deg}.p2{--r:-8deg}.p3{--r:8deg}.p4{--r:24deg}
 
 /* ===== v6 ===== */
-/* continuous lines on menu, language and white buttons; dashed things never get a shadow */
-.lang,.burger{border-style:solid}
-.btn:not(.red):not(.plain){border-style:solid}
-.btn.red{outline:none}
-.btn.red.ring{outline:2px dashed var(--red);outline-offset:4px}
-.step,.chip,.cardx{box-shadow:none}
 .light.wlbox{box-shadow:none}
 .ticket{box-shadow:none}
-.machine .window{border-style:solid}
 /* map */
 .map .trailpath{fill:none;stroke:none}
-.map .halo{fill:none;stroke:var(--bg);stroke-width:9}
 .map .road{opacity:.9}
-.map .ghost{display:none}
 .map .goal{transform-box:fill-box;transform-origin:center;will-change:transform}
 .map .goal.on{animation:starpop .45s cubic-bezier(.2,1.8,.4,1) both}
 @keyframes starpop{from{transform:scale(.5)}to{transform:scale(1)}}
@@ -362,12 +342,8 @@ body.hot .btn.red{color:#fff}
 .igline{margin-top:10px;font-weight:700}
 .igline a{color:var(--redt)}
 
-/* ===== v7: fewer dashed lines, never next to solid ones ===== */
-.wlbox{outline:none}
-.ticket{outline:none}
-.chip{border-style:solid}
+/* ===== v7 =====*/
 .cardx .art{border:0;background:rgba(27,20,18,.035)}
-.pk::before{display:none}
 .coupon{transform:none}
 .tagl{font-size:.85rem;font-weight:700;color:var(--redt)!important;margin:0 0 4px!important}
 /* squad: each shirt carries its own crown */
@@ -413,3 +389,15 @@ body.hot .btn.red{color:#fff}
 .a-guy .spark{stroke-width:5}
 .art.pass{align-items:flex-end}
 .art.pass .lb{align-self:center}
+
+/* Dashed lines are used only for the launch-discount coupon and the map routes: never with a solid line or a shadow on the same element. */
+/* the eyes peek out once every 30 seconds */
+.peek{opacity:0;animation:peek30 30s ease-in-out 3s infinite}
+@keyframes peek30{
+  0%{opacity:0;transform:translateY(6px) rotate(0)}
+  1.5%{opacity:1;transform:translateY(0) rotate(0)}
+  3%{transform:rotate(-14deg) translateY(-3px)}
+  4.5%{transform:rotate(12deg) translateY(-3px)}
+  6%{opacity:1;transform:rotate(0)}
+  7.5%,100%{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.peek{animation:none;opacity:1}}
