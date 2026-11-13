@@ -396,3 +396,9 @@ body.hot .btn.red{color:#fff}
 .a-guy .lip{fill:none;stroke:#6e3f25;stroke-width:1.8;stroke-linecap:round}
 .a-guy .bt{font-size:6.5px}
 .a-guy .lanyard{transform-origin:75px 52px}
+.a-guy .nip{fill:#8a4f33}
+.a-guy .bt{font-size:8px}
+.a-guy .lanyard{transform-origin:100px 60px}
+.a-guy .ln{stroke-width:1.8}
+.a-guy .skin{stroke-width:2.4}
+.a-guy .stub{opacity:.16}
